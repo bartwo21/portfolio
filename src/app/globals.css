@@ -17,13 +17,12 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  width: 65%;
+  margin: 0 auto;
+  background-color: #2b2b2b;
+  color: #a9b7c5;
+  display: flex;
+  justify-content: space-between;
 }
 
 @layer utilities {
