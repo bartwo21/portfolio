@@ -34,9 +34,9 @@ const Aboutme = (props: Props) => {
         boxShadow:
           "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px",
       }}
-      className="about-me min-h-1/2 min-w-min p-3 bg-zinc-900 rounded-md"
+      className="about-me min-h-1/2 min-w-min p-8 bg-zinc-900 rounded-md"
     >
-      <h1 id="about" className="text-xl text-sky-50 mb-3 text-center">
+      <h1 id="about" className="text-xl text-sky-50 mb-6 text-center">
         About Me
       </h1>
       <div className="flex justify-center text-left flex-col">

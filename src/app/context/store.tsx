@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useRef, useState } from "react";
+import React, { createContext, useState } from "react";
 
 export type ContextType = {
   selectedSection: string;

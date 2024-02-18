@@ -3,7 +3,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context, ContextType } from "../context/store";
 import { sendMail } from "../lib/mail";
-type Props = {};
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export type FormData = {
   name: string;
@@ -11,7 +12,7 @@ export type FormData = {
   message: string;
 };
 
-const Contact = (props: Props) => {
+const Contact = () => {
   const { selectedSection, setSelectedSection } = useContext(
     Context
   ) as ContextType;
@@ -20,6 +21,7 @@ const Contact = (props: Props) => {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,23 +41,31 @@ const Contact = (props: Props) => {
 
   const send = async () => {
     if (!formData.name || !formData.email || !formData.message) {
-      // Notification
+      toast.error("Please fill in all fields!");
       return;
     }
-    await sendMail({
-      to: "bartuportfolio@gmail.com",
-      name: formData.name,
-      subject: "Portfolio Contact",
-      body: `
-        <h1>${formData.name}</h1>
-        <h3>From ${formData.email}</h3>
-        <p>${formData.message}</p>`,
-    });
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+    try {
+      setLoading(true);
+      await sendMail({
+        to: "bartuportfolio@gmail.com",
+        name: formData.name,
+        subject: "Portfolio Contact",
+        body: `
+          <h1>${formData.name}</h1>
+          <h3>From ${formData.email}</h3>
+          <p>${formData.message}</p>`,
+      });
+      toast.success("Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch {
+      toast.error("An error occurred while sending the message!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -67,6 +77,7 @@ const Contact = (props: Props) => {
           "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px",
       }}
     >
+      <h1 className="text-xl text-sky-50 text-center mb-4">Contact Me</h1>
       <div className="mb-5">
         <label
           htmlFor="name"
@@ -116,10 +127,18 @@ const Contact = (props: Props) => {
       </div>
       <div>
         <button
-          formAction={() => send()}
+          type="button"
+          onClick={send}
           className="hover:bg-sky-600 transition-all rounded-md bg-sky-500 py-3 px-8 text-base font-semibold text-white outline-none"
+          disabled={loading}
         >
-          Submit
+          {loading ? (
+            <div className="px-4">
+              <div className="w-6 h-6 border-t-2 border-r-2 border-b-0 border-l-0 border-gray-200 rounded-full animate-spin"></div>
+            </div>
+          ) : (
+            "Submit"
+          )}
         </button>
       </div>
     </form>
