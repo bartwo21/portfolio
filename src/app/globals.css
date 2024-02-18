@@ -23,6 +23,15 @@ body {
   color: #a9b7c5;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1208px) {
+  body {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @layer utilities {

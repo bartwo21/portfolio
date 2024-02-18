@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import LeftBar from "@/components/leftbar";
+import LeftBar from "@/app/components/leftbar";
+import { ContextProvider } from "./context/store";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <LeftBar />
-        {children}
+        <ContextProvider>
+          <LeftBar />
+          {children}
+        </ContextProvider>
       </body>
     </html>
   );
