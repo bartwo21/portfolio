@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Context, ContextType } from "../context/store";
-import { Tilt } from "@jdion/tilt-react";
+import Tilt from "react-parallax-tilt";
 
 type Props = {};
 
@@ -15,7 +15,7 @@ const Aboutme = (props: Props) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const isInWorkSection = scrollTop >= 600 && scrollTop <= 1000;
+      const isInWorkSection = scrollTop >= 600 && scrollTop <= 1300;
       if (isInWorkSection && selectedSection !== "about") {
         setSelectedSection("about");
       } else if (!isInWorkSection && selectedSection === "about") {
@@ -29,7 +29,10 @@ const Aboutme = (props: Props) => {
   }, [selectedSection]);
 
   return (
-    <div
+    <Tilt
+      tiltEnable={false}
+      scale={1.02}
+      transitionSpeed={2500}
       style={{
         boxShadow:
           "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px",
@@ -60,7 +63,7 @@ const Aboutme = (props: Props) => {
           </p>
         </div>
       </div>
-    </div>
+    </Tilt>
   );
 };
 

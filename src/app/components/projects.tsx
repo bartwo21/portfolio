@@ -2,6 +2,7 @@
 
 import React from "react";
 import { GithubRepoData, fetchGetAllGithubRepos } from "../lib/data";
+import Tilt from "react-parallax-tilt";
 import Link from "next/link";
 
 const ProjectsContainer: React.FC = async () => {
@@ -18,24 +19,31 @@ const ProjectsContainer: React.FC = async () => {
       {fetchData ? (
         fetchData?.map((data) => {
           return (
-            <Link
-              href={data.html_url}
-              key={data.name}
-              className="card bg-zinc-900 rounded-md p-2 shadow-md flex justify-between xl:w-4/6 w-5/6 cursor-pointer flex-col min-h-24"
-              target="_blank"
+            <Tilt
+              tiltEnable={false}
+              scale={1.02}
+              transitionSpeed={2500}
+              className=" xl:w-4/6 w-5/6"
             >
-              <div className="left flex flex-col gap-2">
-                <h2 className="text-sm font-semibold">
-                  {data.topics?.map((topic) => (
-                    <span key={topic} className="text-zinc-500">
-                      {topic + " "}
-                    </span>
-                  ))}
-                </h2>
-                <h1 className="text-xl font-bold">{data.name}</h1>
-                <p className="text-gray-600">{data.description}</p>
-              </div>
-            </Link>
+              <Link
+                href={data.html_url}
+                key={data.name}
+                className="card bg-zinc-900 rounded-md p-2 mr-2 shadow-md flex justify-between cursor-pointer flex-col min-h-24"
+                target="_blank"
+              >
+                <div className="left flex flex-col gap-2">
+                  <h2 className="text-sm font-semibold">
+                    {data.topics?.map((topic) => (
+                      <span key={topic} className="text-zinc-500">
+                        {topic + " "}
+                      </span>
+                    ))}
+                  </h2>
+                  <h1 className="text-xl font-bold">{data.name}</h1>
+                  <p className="text-gray-600">{data.description}</p>
+                </div>
+              </Link>
+            </Tilt>
           );
         })
       ) : (
@@ -53,7 +61,7 @@ const ProjectsContainer: React.FC = async () => {
       )}
       <Link
         href="/"
-        className="animate-pulse xl:w-2/4 w-1/2 text-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-sky-400 dark:text-white dark:border-gray-600 dark:hover:bg-sky-900 dark:hover:border-gray-600 dark:focus:ring-gray-700 transition-all"
+        className="xl:w-2/4 w-1/2 text-center text-white border-2 hover:text-sky-300 border-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 transition-all"
       >
         Back to home
       </Link>

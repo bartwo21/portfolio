@@ -29,7 +29,7 @@ const LeftBar: React.FC = (): ReactNode => {
         <h1 className="xl:text-6xl text-4xl font-medium text-sky-300">
           Bartu Çakır
         </h1>
-        <p className="leading-7 text-xl w-11/12">
+        <p className="leading-7 text-lg w-11/12">
           <strong className="text-white">Software Developer.</strong> A
           self-taught developer with an interest in{" "}
           <strong className="text-white">Computer Science</strong>. 🚀 Exploring
@@ -47,7 +47,7 @@ const LeftBar: React.FC = (): ReactNode => {
           <Link
             download
             href="/BartuCakirCV.pdf"
-            className="bg-sky-400  text-white  py-2 px-4 rounded-md hover:bg-sky-300 transition-colors cursor-pointer"
+            className="xl:w-1/4 w-1/2 text-center text-white border-2 hover:text-sky-300 border-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 transition-all"
             target="_blank"
           >
             Download Resume
@@ -104,6 +104,30 @@ const LeftBar: React.FC = (): ReactNode => {
           </li>
           <li
             onClick={() => {
+              setSelectedSection("experience");
+              if (pathname === "/projects") router.push("/");
+            }}
+            className={`cursor-pointer w-4/6 transition-all font-extralight ${
+              selectedSection == "experience"
+                ? "text-2xl font-semibold text-white"
+                : "text-xl"
+            }`}
+            style={{ width: "175px" }}
+          >
+            <LinkScroll
+              to="experience"
+              smooth={true}
+              duration={500}
+              onClick={() => {
+                if (pathname === "/projects") router.push("/");
+              }}
+            >
+              {" "}
+              3 - Experience
+            </LinkScroll>
+          </li>
+          <li
+            onClick={() => {
               setSelectedSection("contact");
               if (pathname === "/projects") router.push("/");
             }}
@@ -123,13 +147,13 @@ const LeftBar: React.FC = (): ReactNode => {
               }}
             >
               {" "}
-              3 - Contact
+              4 - Contact
             </LinkScroll>
           </li>
         </ul>
       </div>
       <div className="xl:mt-auto mt-7 mb-16 flex gap-5">
-        <Image
+        {/* <Image
           src="/kucuk.jpg"
           width={50}
           height={50}
@@ -137,7 +161,7 @@ const LeftBar: React.FC = (): ReactNode => {
           className="
           rounded-full border-sky-200 border-2 hidden md:block 
           "
-        />
+        /> */}
         <div className="flex items-center justify-between p-3 bg-zinc-900 rounded-md">
           <ul className="flex justify-between gap-4 md:flex-row flex-col">
             <Link
