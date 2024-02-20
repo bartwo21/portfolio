@@ -11,6 +11,9 @@ import { Context, ContextType } from "../context/store";
 import { Link as LinkScroll } from "react-scroll";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import AnimatedText from "./animatedText";
+import { IoIosMail } from "react-icons/io";
 
 const LeftBar: React.FC = (): ReactNode => {
   const { selectedSection, setSelectedSection } = useContext(
@@ -25,42 +28,74 @@ const LeftBar: React.FC = (): ReactNode => {
 
   return (
     <div className="w-1/2 min-[1208px]:h-screen min-[1208px]:sticky h-1/2 flex flex-col pt-32 top-0 xl:gap-20 gap-6 mr-8">
-      <div className="flex flex-col justify-between gap-4 ">
+      <div className="flex flex-col justify-between gap-3 ">
         <h1 className="xl:text-6xl text-4xl font-medium text-sky-300">
-          Bartu Çakır
+          <AnimatedText text="Bartu Çakır" delay={1} />
         </h1>
-        <p className="leading-7 text-lg w-11/12">
-          <strong className="text-white">Software Developer.</strong> A
-          self-taught developer with an interest in{" "}
-          <strong className="text-white">Computer Science</strong>. 🚀 Exploring
-          opportunities and side projects. 💻 Currently specializing in{" "}
-          <strong className="text-white">Front-end Development.</strong>
-        </p>
-        <div className="flex items-center gap-2 mt-5">
+        <div className="leading-7 text-lg w-11/12 text-white">
+          <AnimatedText
+            words="Software Developer.A self-taught developer with an interest in Computer Science.🚀 Exploring opportunities and side projects. 💻 Currently specializing in Front-end Development."
+            delay={0.5}
+          />
+        </div>
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 25 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            type: "spring",
+            damping: "12",
+            stiffness: "50",
+            duration: 1.5,
+            delay: 1.2,
+          }}
+          className="flex items-center gap-2 mt-5"
+        >
           <div className="gap-2 relative flex h-3 w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
           </div>
           <p>Open to work</p>
-        </div>
-        <div className="mt-1 mb-2">
+        </motion.div>
+        <motion.div
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 },
+          }}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1.5, delay: 1.5 }}
+          className="mt-1 mb-2"
+        >
           <Link
             download
             href="/BartuCakirCV.pdf"
-            className="xl:w-1/4 w-1/2 text-center text-white border-2 hover:text-sky-300 border-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 transition-all"
+            className="xl:w-1/4 w-1/2 text-center text-white border-2 hover:text-sky-300 shadow-[0_0px_9px_-2px_#54b4d3] active:shadow-none duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_0px_0px_0px_rgba(84,180,211,0.3),0_0px_14px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] border-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 transition-all"
             target="_blank"
           >
             Download Resume
           </Link>
-        </div>
-        <ul className="mt-8 gap-3 flex flex-col">
+        </motion.div>
+        <motion.ul
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 },
+          }}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 1.5, delay: 1 }}
+          className="mt-8 gap-3 flex flex-col"
+        >
           <li
             onClick={() => {
               setSelectedSection("work");
               if (pathname === "/projects") router.push("/");
             }}
-            className={`cursor-pointer transition-all font-extralight ${
-              selectedSection == "work"
+            className={`cursor-pointer w-4/6 transition-all font-extralight ${
+              selectedSection === "work"
                 ? "text-2xl font-semibold text-white"
                 : "text-xl"
             }`}
@@ -73,9 +108,16 @@ const LeftBar: React.FC = (): ReactNode => {
               onClick={() => {
                 if (pathname === "/projects") router.push("/");
               }}
+              className="relative inline-block group"
             >
-              {" "}
               1 - Work
+              <span
+                className={`absolute -bottom-1 left-0 right-0 h-0.5 origin-left bg-sky-300 transform scale-x-0 transition-transform duration-250 ease-in-out ${
+                  pathname === "/" && selectedSection === "work"
+                    ? "scale-x-100"
+                    : ""
+                }`}
+              ></span>
             </LinkScroll>
           </li>
           <li
@@ -84,11 +126,11 @@ const LeftBar: React.FC = (): ReactNode => {
               if (pathname === "/projects") router.push("/");
             }}
             className={`cursor-pointer w-4/6 transition-all font-extralight ${
-              selectedSection == "about"
+              selectedSection === "about"
                 ? "text-2xl font-semibold text-white"
                 : "text-xl"
             }`}
-            style={{ width: "115px" }}
+            style={{ width: "110px" }}
           >
             <LinkScroll
               to="about"
@@ -97,9 +139,16 @@ const LeftBar: React.FC = (): ReactNode => {
               onClick={() => {
                 if (pathname === "/projects") router.push("/");
               }}
+              className="relative inline-block group"
             >
-              {" "}
               2 - About
+              <span
+                className={`absolute -bottom-1 left-0 right-0 h-0.5 origin-left bg-sky-300 transform scale-x-0 transition-transform duration-250 ease-in-out ${
+                  pathname === "/" && selectedSection === "about"
+                    ? "scale-x-100"
+                    : ""
+                }`}
+              ></span>
             </LinkScroll>
           </li>
           <li
@@ -108,11 +157,11 @@ const LeftBar: React.FC = (): ReactNode => {
               if (pathname === "/projects") router.push("/");
             }}
             className={`cursor-pointer w-4/6 transition-all font-extralight ${
-              selectedSection == "experience"
+              selectedSection === "experience"
                 ? "text-2xl font-semibold text-white"
                 : "text-xl"
             }`}
-            style={{ width: "175px" }}
+            style={{ width: "170px" }}
           >
             <LinkScroll
               to="experience"
@@ -121,9 +170,16 @@ const LeftBar: React.FC = (): ReactNode => {
               onClick={() => {
                 if (pathname === "/projects") router.push("/");
               }}
+              className="relative inline-block group"
             >
-              {" "}
               3 - Experience
+              <span
+                className={`absolute -bottom-1 left-0 right-0 h-0.5 origin-left bg-sky-300 transform scale-x-0 transition-transform duration-250 ease-in-out ${
+                  pathname === "/" && selectedSection === "experience"
+                    ? "scale-x-100"
+                    : ""
+                }`}
+              ></span>
             </LinkScroll>
           </li>
           <li
@@ -132,7 +188,7 @@ const LeftBar: React.FC = (): ReactNode => {
               if (pathname === "/projects") router.push("/");
             }}
             className={`cursor-pointer w-4/6 transition-all font-extralight ${
-              selectedSection == "contact"
+              selectedSection === "contact"
                 ? "text-2xl font-semibold text-white"
                 : "text-xl"
             }`}
@@ -145,41 +201,48 @@ const LeftBar: React.FC = (): ReactNode => {
               onClick={() => {
                 if (pathname === "/projects") router.push("/");
               }}
+              className="relative inline-block group"
             >
-              {" "}
               4 - Contact
+              <span
+                className={`absolute -bottom-1 left-0 right-0 h-0.5 origin-left bg-sky-300 transform scale-x-0 transition-transform duration-250 ease-in-out ${
+                  pathname === "/" && selectedSection === "contact"
+                    ? "scale-x-100"
+                    : ""
+                }`}
+              ></span>
             </LinkScroll>
           </li>
-        </ul>
+        </motion.ul>
       </div>
-      <div className="xl:mt-auto mt-7 mb-16 flex gap-5">
-        {/* <Image
-          src="/kucuk.jpg"
-          width={50}
-          height={50}
-          alt="Picture"
-          className="
-          rounded-full border-sky-200 border-2 hidden md:block 
-          "
-        /> */}
-        <div className="flex items-center justify-between p-3 bg-zinc-900 rounded-md">
-          <ul className="flex justify-between gap-4 md:flex-row flex-col">
+      <motion.div
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
+        }}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 1.5 }}
+        className="xl:mt-auto mt-7 mb-16 flex gap-5"
+      >
+        <div className="flex flex-col items-left gap-2 justify-between p-2 px-4 bg-zinc-900 rounded-md">
+          <ul className="flex justify-between gap-2 md:flex-row flex-col">
             <Link
-              className="text-sm hover:text-sky-100 flex items-center gap-1"
+              className="text-sm hover:text-sky-100 flex items-center gap-1 mr-2"
               href="https://github.com/bartwo21"
               target="_blank"
             >
               <FaGithub size={12} /> Github <FaExternalLinkAlt size={12} />
             </Link>
             <Link
-              className="text-sm hover:text-sky-100 flex items-center gap-1"
+              className="text-sm hover:text-sky-100 flex items-center gap-1 mr-2"
               href="https://www.linkedin.com/in/bartwocakir/"
               target="_blank"
             >
               <FaLinkedin size={12} /> LinkedIn <FaExternalLinkAlt size={12} />
             </Link>
             <Link
-              className="text-sm hover:text-sky-100 flex items-center gap-1"
+              className="text-sm hover:text-sky-100 flex items-center gap-1 mr-2"
               href="https://www.instagram.com/bar.two/?hl=tr"
               target="_blank"
             >
@@ -187,13 +250,29 @@ const LeftBar: React.FC = (): ReactNode => {
               <FaExternalLinkAlt size={12} />
             </Link>
           </ul>
+          <Link
+            className="text-sm hover:text-sky-100 flex items-center gap-1"
+            href="mailto:bartucakir21@gmail.com"
+          >
+            <IoIosMail size={16} /> bartucakir21@gmail.com{" "}
+            <FaExternalLinkAlt size={12} />
+          </Link>
         </div>
-      </div>
-      <div className="fixed bottom-0 left-1/5 z-10 p-2 bg-slate-300 rounded-t-2xl opacity-40">
+      </motion.div>
+      <motion.div
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
+        }}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 1.5 }}
+        className="fixed bottom-0 left-1/5 z-10 p-2 bg-slate-300 rounded-t-2xl opacity-40"
+      >
         <p className="text-xs text-gray-800 text-center">
           Made with ❤️ by Bartu Çakır
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
 import LeftBar from "@/app/components/leftbar";
 import { ContextProvider } from "./context/store";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Montserrat({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Bartwofolio",
+  title: "Bartu | Personal Portfolio",
   description: "Bartu Cakir Portfolio",
+  icons: {
+    icon: ["/favicon.ico"],
+  },
 };
 
 export default function RootLayout({
@@ -20,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <ContextProvider>
           <LeftBar />
           {children}

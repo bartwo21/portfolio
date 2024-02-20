@@ -45,7 +45,7 @@ const Aboutme = (props: Props) => {
       <div className="flex justify-center text-left flex-col">
         <div className="w-full flex text-center justify-center">
           <Image
-            src="/buyuk.jpg"
+            src="/buyuk.webp"
             width={400}
             height={400}
             alt="Picture"
@@ -53,13 +53,25 @@ const Aboutme = (props: Props) => {
           />
         </div>
         <div className="">
-          <p className="leading-6 text-sm p-2 mt-5 w-full">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-            consequatur sed delectus, facilis numquam iure, quo reprehenderit
-            explicabo temporibus nesciunt iusto tempora doloremque labore
-            recusandae? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Sapiente, cumque. Similique, voluptatum rem. Provident assumenda
-            voluptatem, quibusdam praesentium nihil illum dolores voluptate.
+          <p className="md:leading-5 leading-4 md:text-sm text-xs p-2 mt-5 w-full">
+            Hi, I'm Bartu, a 4th-year student majoring in{" "}
+            <span className="text-sky-300">
+              Mathematics and Computer Science
+            </span>{" "}
+            at Eskişehir Osmangazi University. I'm also pursuing a{" "}
+            <span className="text-sky-300">Computer Programming</span> associate
+            degree at Anadolu University. Currently, I'm focused on enhancing my
+            skills in React, TypeScript, and Next.js. I constantly strive to
+            undertake projects to improve myself and stay updated on industry
+            developments. My education in both mathematics and computer science,
+            along with practical software development skills, shapes my
+            versatile approach. In addition to university life in Eskişehir,
+            Turkey, my distance education in Computer Programming provides a
+            broad perspective. Technologies I've recently worked with include
+            <span className="text-sky-300">
+              {" "}
+              TypeScript, React, Next.js, TailwindCSS, and Node.js.
+            </span>
           </p>
         </div>
       </div>

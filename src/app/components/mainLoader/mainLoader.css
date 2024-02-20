@@ -1,0 +1,112 @@
+.shp1 {
+  fill: transparent;
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -300;
+  stroke-width: 100px;
+  stroke: #19f6e8;
+}
+
+.container {
+  z-index: 70;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #18181b;
+  transition: all 0.2s ease-in-out;
+  flex-direction: column;
+  min-width: 100%;
+  overflow-y: hidden;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -400;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw2 {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes draw3 {
+  0% {
+    stroke: #000000;
+  }
+  50% {
+    stroke: #000000;
+  }
+  100% {
+    stroke: #7dd3fc;
+  }
+}
+
+@keyframes draw4 {
+  0% {
+    fill: transparent;
+  }
+  50% {
+    fill: transparent;
+  }
+  100% {
+    fill: #7dd3fc;
+  }
+}
+
+@keyframes increase {
+  0% {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1.1, 1.1);
+  }
+}
+
+.loading-text {
+  -webkit-animation: 6s draw2 linear forwards;
+  animation: 6s draw2 linear forwards;
+}
+
+.txt {
+  -webkit-animation: 2s draw linear forwards, 4s draw3 linear forwards,
+    4s draw4 linear forwards;
+  animation: 2s draw linear forwards, 4s draw3 linear forwards,
+    4s draw4 linear forwards;
+}
+
+.shp1 {
+  -webkit-animation: 2s draw linear forwards, 4s draw3 linear forwards;
+  animation: 2s draw linear forwards, 4s draw3 linear forwards;
+}
+
+.loader-svg {
+  -webkit-animation: 12s increase linear forwards;
+  animation: 12s increase linear forwards;
+}
+
+.loaded {
+  display: none;
+  pointer-events: none;
+}

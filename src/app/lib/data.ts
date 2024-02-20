@@ -14,7 +14,7 @@ export type ExperienceData = {
   description: string;
 };
 
-export async function fetchGetAllGithubRepos() {
+export async function fetchAllGithubRepos() {
   try {
     const response = await fetch(`https://api.github.com/users/bartwo21/repos`);
     let data = await response.json();
@@ -38,14 +38,14 @@ export const experienceData = [
     company: "Teknodev",
     date: "17/05/2023 - 20/09/2023",
     description:
-      "In my 4-month Frontend Development Internship at Teknodev, I gained hands-on experience with React, TypeScript, Redux, Tailwind CSS, SASS. Collaborating in a diverse team, I honed Git skills for version control, improving my adaptability in an agile development setting with a focus on clear communication and teamwork.",
+      "In my 4-month Frontend Development Internship at Teknodev, I gained hands-on experience with React, TypeScript, Redux, Tailwind CSS and SASS. Collaborating in a diverse team, I honed Git skills for version control, improving my adaptability in an agile development setting with a focus on clear communication and teamwork.",
   },
   {
-    title: "Intern Frontend Developer",
-    company: "lorem ipsum",
-    date: "17/05/2023 - 20/09/2023",
+    title: "Barmen",
+    company: "Cullinan Hotel",
+    date: "12/07/2022 - 15/09/2022",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quam eos quidem magnam optio amet minima voluptatum doloribus, cum deleniti doloremque similique nam molestias, enim sapiente error in. Et, laborum!",
+      "Proficient in beverage preparation and service, bar environment mastery, friendly and hospitable demeanor, effective English communication for both local and foreign guests.",
   },
 ];
 
@@ -56,7 +56,7 @@ export const projectData: GithubRepoData[] = [
     topics: ["react", "redux", "typescript", "scss", "react-router-v6"],
     html_url: "https://github.com/bartwo21/tour-project",
     live_url: "https://bartutourproject.netlify.app/",
-    img: "/tour.png",
+    img: "/tour.webp",
   },
   {
     name: "weather-app",
@@ -65,7 +65,7 @@ export const projectData: GithubRepoData[] = [
     html_url: "https://github.com/bartwo21/weather-app-react",
     live_url:
       "https://648d09f5cc1ae5322316a12e--unrivaled-cactus-3ec579.netlify.app/",
-    img: "/weather.png",
+    img: "/weather.webp",
   },
   {
     name: "next-learn",
@@ -73,6 +73,6 @@ export const projectData: GithubRepoData[] = [
     topics: ["nextjs", "react", "typescript", "tailwindcss", "vercel-postgres"],
     html_url: "https://github.com/bartwo21/next-learn",
     live_url: "https://next-learn-two-theta.vercel.app/dashboard",
-    img: "/next.png",
+    img: "/next.webp",
   },
 ];

@@ -70,15 +70,10 @@ const Contact = () => {
   };
 
   return (
-    <Tilt
-      tiltEnable={false}
-      scale={1.02}
-      transitionSpeed={2500}
-      className=" w-full"
-    >
+    <Tilt tiltEnable={false} scale={1.02} transitionSpeed={2500}>
       <form
         id="contact"
-        className="flex flex-col text-white p-8 bg-zinc-900 rounded-md"
+        className="flex flex-col text-white p-8 bg-zinc-900 rounded-md w-full"
         style={{
           boxShadow:
             "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px",
@@ -98,6 +93,7 @@ const Contact = () => {
             className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-sky-500 focus:shadow-md"
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             value={formData.name}
+            maxLength={40}
           />
         </div>
         <div className="mb-5">
@@ -115,6 +111,7 @@ const Contact = () => {
               setFormData({ ...formData, email: e.target.value })
             }
             value={formData.email}
+            maxLength={40}
           />
         </div>
         <div className="mb-5">
@@ -132,13 +129,14 @@ const Contact = () => {
               setFormData({ ...formData, message: e.target.value })
             }
             value={formData.message}
+            maxLength={500}
           ></textarea>
         </div>
         <div>
           <button
             type="button"
             onClick={send}
-            className="text-white text-center cursor-pointer font-medium rounded-lg text-sm px-5 py-2.5 border border-sky-300 transition-all"
+            className="cursor-pointer text-center text-white border-2 hover:text-sky-300 shadow-[0_0px_9px_-2px_#54b4d3] active:shadow-none duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_0px_0px_0px_rgba(84,180,211,0.3),0_0px_14px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] border-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 transition-all"
             disabled={loading}
           >
             {loading ? (
