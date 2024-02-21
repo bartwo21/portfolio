@@ -24,6 +24,7 @@ const Githuballrepos = ({ fetchData }: { fetchData: GithubRepoData[] }) => {
               scale={1.02}
               transitionSpeed={2500}
               className=" xl:w-full w-5/6"
+              key={data.name}
             >
               <Link
                 href={data.html_url}
@@ -48,8 +49,8 @@ const Githuballrepos = ({ fetchData }: { fetchData: GithubRepoData[] }) => {
         })
       ) : (
         <p className=" w-2/4">
-          We're currently unable to retrieve the data due to API limitations.
-          Please try again later or explore all repositories on{" "}
+          We&apos;re currently unable to retrieve the data due to API
+          limitations. Please try again later or explore all repositories on{" "}
           <Link
             className="underline hover:text-sky-200"
             href="https://github.com/bartwo21"
