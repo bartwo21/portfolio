@@ -139,7 +139,7 @@ const Contact = () => {
             className="cursor-pointer text-center text-white border-2 hover:text-sky-300 shadow-[0_0px_9px_-2px_#54b4d3] active:shadow-none duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_0px_0px_0px_rgba(84,180,211,0.3),0_0px_14px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] border-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 transition-all"
             disabled={loading}
           >
-            {loading ? (
+            {loading ? ( // fix loading height
               <div className="px-4">
                 <div className="w-6 h-6 border-t-2 border-r-2 border-b-0 border-l-0 border-gray-200 rounded-full animate-spin"></div>
               </div>

@@ -55,10 +55,8 @@ const Aboutme = (props: Props) => {
         <div className="">
           <p className="md:leading-5 leading-4 md:text-sm text-xs p-2 mt-5 w-full">
             Hi, I'm Bartu, a 4th-year student majoring in{" "}
-            <span className="text-sky-300">
-              Mathematics and Computer Science
-            </span>{" "}
-            at Eskişehir Osmangazi University. I'm also pursuing a{" "}
+            <span className="text-sky-300">Math. and Computer Science</span> at
+            Eskişehir Osmangazi University. I'm also pursuing a{" "}
             <span className="text-sky-300">Computer Programming</span> associate
             degree at Anadolu University. Currently, I'm focused on enhancing my
             skills in React, TypeScript, and Next.js. I constantly strive to

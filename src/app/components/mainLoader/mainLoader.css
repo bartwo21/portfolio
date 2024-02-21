@@ -85,20 +85,20 @@
 }
 
 .loading-text {
-  -webkit-animation: 6s draw2 linear forwards;
-  animation: 6s draw2 linear forwards;
+  -webkit-animation: 3s draw2 linear forwards;
+  animation: 3s draw2 linear forwards;
 }
 
 .txt {
-  -webkit-animation: 2s draw linear forwards, 4s draw3 linear forwards,
-    4s draw4 linear forwards;
-  animation: 2s draw linear forwards, 4s draw3 linear forwards,
-    4s draw4 linear forwards;
+  -webkit-animation: 1.5s draw linear forwards, 3s draw3 linear forwards,
+    3s draw4 linear forwards;
+  animation: 1.5s draw linear forwards, 4s draw3 linear forwards,
+    3s draw4 linear forwards;
 }
 
 .shp1 {
-  -webkit-animation: 2s draw linear forwards, 4s draw3 linear forwards;
-  animation: 2s draw linear forwards, 4s draw3 linear forwards;
+  -webkit-animation: 1.5s draw linear forwards, 3s draw3 linear forwards;
+  animation: 1.5s draw linear forwards, 3s draw3 linear forwards;
 }
 
 .loader-svg {

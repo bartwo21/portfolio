@@ -32,7 +32,7 @@ const ProjectsContainer: React.FC = async () => {
               tiltEnable={false}
               scale={1.02}
               transitionSpeed={2500}
-              className=" xl:w-4/6 w-5/6"
+              className=" xl:w-full w-5/6"
             >
               <Link
                 href={data.html_url}
