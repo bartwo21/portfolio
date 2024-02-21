@@ -25,7 +25,7 @@ export async function fetchAllGithubRepos() {
   try {
     const githubApi = process.env.NEXT_PUBLIC_PUBLICAPI_KEY;
     const response = await fetch(githubApi as string);
-    console.log("is Server: ", typeof window === "undefined");
+    // console.log("is Server: ", typeof window === "undefined");
     const data = await response.json();
     const reposInfos = data?.map((repo: GithubRepoData) => {
       return {

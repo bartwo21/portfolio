@@ -112,7 +112,7 @@ const Projectcards: React.FC = () => {
                   alt="Project Image"
                   width={300}
                   height={300}
-                  className="rounded-lg"
+                  className="rounded-lg mb-0 sm:my-1"
                   style={{
                     transform: "translateZ(50px)",
                   }}

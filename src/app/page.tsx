@@ -39,7 +39,7 @@ const AnimatedComponent = ({ children }: { children: React.ReactNode }) => {
 
 export default function Home() {
   return (
-    <div className="py-0 mb-16 w-1/2 items-end flex flex-col flex-wrap gap-36">
+    <div className="py-0 mb-16 md:w-1/2 w-4/5 items-end flex flex-col flex-wrap md:gap-36 gap-12">
       <ToastContainer stacked />
       <MainLoader />
 

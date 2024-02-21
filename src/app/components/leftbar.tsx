@@ -27,7 +27,7 @@ const LeftBar: React.FC = (): ReactNode => {
   }, [pathname]);
 
   return (
-    <div className="w-1/2 min-[1208px]:h-screen min-[1208px]:sticky h-1/2 flex flex-col pt-32 top-0 xl:gap-20 gap-6 mr-8">
+    <div className="md:w-1/2 w-4/6 min-[1208px]:h-screen min-[1208px]:sticky h-1/2 flex flex-col md:pt-32 pt-14 top-0 xl:gap-20 gap-6 mr-8">
       <div className="flex flex-col justify-between gap-3 ">
         <h1 className="xl:text-6xl text-4xl font-medium text-sky-300">
           <AnimatedText text="Bartu Çakır" delay={1} />
