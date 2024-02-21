@@ -67,7 +67,7 @@ const Aboutme = () => {
             include
             <span className="text-sky-300">
               {" "}
-              TypeScript, React, Next.js, TailwindCSS, and Node.js.
+              React, TypeScript, Next.js, TailwindCSS, and SASS.
             </span>
           </p>
         </div>
