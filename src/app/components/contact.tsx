@@ -144,7 +144,9 @@ const Contact = () => {
                 <div className="w-6 h-6 border-t-2 border-r-2 border-b-0 border-l-0 border-gray-200 rounded-full animate-spin"></div>
               </div>
             ) : (
-              "Submit"
+              <div className="p-0.5">
+                <p>Submit</p>
+              </div>
             )}
           </button>
         </div>
