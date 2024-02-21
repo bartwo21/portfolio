@@ -3,8 +3,15 @@ export type GithubRepoData = {
   description: string;
   topics: string[];
   html_url: string;
+};
+
+export type PinnedData = {
+  name: string;
+  description: string;
+  topics: string[];
+  html_url: string;
   live_url: string;
-  img?: string;
+  img: string;
 };
 
 export type ExperienceData = {
@@ -16,8 +23,10 @@ export type ExperienceData = {
 
 export async function fetchAllGithubRepos() {
   try {
-    const response = await fetch(`https://api.github.com/users/bartwo21/repos`);
-    let data = await response.json();
+    const githubApi = process.env.NEXT_PUBLIC_PUBLICAPI_KEY;
+    const response = await fetch(githubApi as string);
+    console.log("is Server: ", typeof window === "undefined");
+    const data = await response.json();
     const reposInfos = data?.map((repo: GithubRepoData) => {
       return {
         name: repo.name,
@@ -49,7 +58,7 @@ export const experienceData = [
   },
 ];
 
-export const projectData: GithubRepoData[] = [
+export const projectData: PinnedData[] = [
   {
     name: "tour-page",
     description: "Interactive React-based travel platform.",
