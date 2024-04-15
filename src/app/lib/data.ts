@@ -43,7 +43,7 @@ export async function fetchAllGithubRepos() {
 
 export const experienceData = [
   {
-    title: "Frontend Developer",
+    title: "Freelance Frontend Developer",
     company: "Gise.com",
     date: "24/02/2024 - Present",
     description:
