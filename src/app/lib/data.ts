@@ -43,18 +43,18 @@ export async function fetchAllGithubRepos() {
 
 export const experienceData = [
   {
+    title: "Frontend Developer",
+    company: "Gise.com",
+    date: "24/02/2024 - Present",
+    description:
+      "I rebuilt the frontend of a website, which was initially built with HTML, CSS, and JavaScript, from scratch using React, TypeScript, and REST API.",
+  },
+  {
     title: "Intern Frontend Developer",
     company: "Teknodev",
     date: "17/05/2023 - 20/09/2023",
     description:
       "In my 4-month Frontend Development Internship at Teknodev, I gained hands-on experience with React, TypeScript, Redux, Tailwind CSS and SASS. Collaborating in a diverse team, I honed Git skills for version control, improving my adaptability in an agile development setting with a focus on clear communication and teamwork.",
-  },
-  {
-    title: "Barmen",
-    company: "Cullinan Hotel",
-    date: "12/07/2022 - 15/09/2022",
-    description:
-      "Proficient in beverage preparation and service, bar environment mastery, friendly and hospitable demeanor, effective English communication for both local and foreign guests.",
   },
 ];
 
