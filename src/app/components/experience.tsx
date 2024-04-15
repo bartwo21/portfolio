@@ -10,7 +10,7 @@ type Props = {};
 
 const Experience = (props: Props) => {
   const [selectedCompany, setSelectedCompany] = useState<string | null>(
-    "Teknodev"
+    "Gise.com"
   );
   const [selectedExperience, setSelectedExperience] =
     useState<ExperienceData | null>(experienceData[0]);
