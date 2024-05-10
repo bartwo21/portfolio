@@ -45,7 +45,7 @@ export const experienceData = [
   {
     title: "Freelance Frontend Developer",
     company: "Gise.com",
-    date: "24/02/2024 - Present",
+    date: "24/02/2024 - 30/03/2024",
     description:
       "I rebuilt the frontend of a website, which was initially built with HTML, CSS, and JavaScript, from scratch using React, TypeScript, and REST API.",
   },
