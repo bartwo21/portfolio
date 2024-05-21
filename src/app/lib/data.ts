@@ -47,7 +47,7 @@ export const experienceData = [
     company: "Gise.com",
     date: "24/02/2024 - 30/03/2024",
     description:
-      "I rebuilt the frontend of a website, which was initially built with HTML, CSS, and JavaScript, from scratch using React, TypeScript, and REST API.",
+      "I revamped the frontend of a website using React and TypeScript. The enhancements include an engaging homepage, detailed ticket pages, seat selection with special pricing, event search, blog sections, user operations, and a profile page. Additionally, I integrated bus and plane ticket searches, seat selection, and dedicated payment pages. I made all connections using REST APIs.",
   },
   {
     title: "Intern Frontend Developer",
