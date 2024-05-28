@@ -77,11 +77,13 @@ export const projectData: PinnedData[] = [
     img: "/weather.webp",
   },
   {
-    name: "next-learn",
-    description: "A project developed alongside the Next.js documentation.",
-    topics: ["nextjs", "react", "typescript", "tailwindcss", "vercel-postgres"],
-    html_url: "https://github.com/bartwo21/next-learn",
-    live_url: "https://next-learn-two-theta.vercel.app/dashboard",
-    img: "/next.webp",
+    name: "mern-stack-chat-app",
+    description:
+      "This is a real-time chat app using Node.js, Express, MongoDB, and WebSocket.",
+    topics: ["react", "mongodb", "mongoose", "expressjs", "tailwindcss"],
+    html_url: "https://github.com/bartwo21/chat-app",
+    live_url:
+      "https://6656431bad64be895fc5ef59--dainty-fox-59bf9e.netlify.app/",
+    img: "/chat.webp",
   },
 ];
