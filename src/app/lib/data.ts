@@ -77,7 +77,7 @@ export const projectData: PinnedData[] = [
     img: "/weather.webp",
   },
   {
-    name: "mern-stack-chat-app",
+    name: "mern-chat-app",
     description:
       "This is a real-time chat app using Node.js, Express, MongoDB, and WebSocket.",
     topics: ["react", "mongodb", "mongoose", "expressjs", "tailwindcss"],
