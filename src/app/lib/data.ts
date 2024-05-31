@@ -68,13 +68,12 @@ export const projectData: PinnedData[] = [
     img: "/tour.webp",
   },
   {
-    name: "weather-app",
-    description: "Weather app with React and TypeScript.",
-    topics: ["react", "typescript", "axios"],
-    html_url: "https://github.com/bartwo21/weather-app-react",
-    live_url:
-      "https://648d09f5cc1ae5322316a12e--unrivaled-cactus-3ec579.netlify.app/",
-    img: "/weather.webp",
+    name: "seat-charts",
+    description: "Bus and default seating charts",
+    topics: ["react", "typescript", "rsuite", "react-icons"],
+    html_url: "https://github.com/bartwo21/seat-charts",
+    live_url: "https://seat-charts.vercel.app/",
+    img: "/seat.webp",
   },
   {
     name: "mern-chat-app",
