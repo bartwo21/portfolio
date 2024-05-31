@@ -82,7 +82,7 @@ export const projectData: PinnedData[] = [
     topics: ["react", "mongodb", "mongoose", "expressjs", "tailwindcss"],
     html_url: "https://github.com/bartwo21/chat-app",
     live_url:
-      "https://6656431bad64be895fc5ef59--dainty-fox-59bf9e.netlify.app/",
+      "https://66574e31cd59f833c0111219--dainty-fox-59bf9e.netlify.app/",
     img: "/chat.webp",
   },
 ];
