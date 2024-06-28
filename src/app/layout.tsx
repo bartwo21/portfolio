@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import Clouds from "./components/clouds";
 
 import LeftBar from "@/app/components/leftbar";
 import { ContextProvider } from "./context/store";
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <ContextProvider>
+          <Clouds />
           <LeftBar />
           {children}
         </ContextProvider>

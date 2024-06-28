@@ -107,16 +107,18 @@ const Projectcards: React.FC = () => {
                 className="img xl:w-60 2xl:mt-3 xl:mb-4 mt-4 px-1 hover:ml-10"
                 scale={1.25}
               >
-                <Image
-                  src={data.img ?? ""}
-                  alt="Project Image"
-                  width={300}
-                  height={300}
-                  className="rounded-lg mb-0 sm:my-1"
-                  style={{
-                    transform: "translateZ(50px)",
-                  }}
-                />
+                <Link href={data.live_url} target="_blank">
+                  <Image
+                    src={data.img ?? ""}
+                    alt="Project Image"
+                    width={300}
+                    height={300}
+                    className="rounded-lg mb-0 sm:my-1"
+                    style={{
+                      transform: "translateZ(50px)",
+                    }}
+                  />
+                </Link>
               </Tilt>
             </div>
           </motion.div>
