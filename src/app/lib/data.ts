@@ -62,7 +62,13 @@ export const projectData: PinnedData[] = [
   {
     name: "tour-page",
     description: "Interactive React-based travel platform.",
-    topics: ["react", "redux", "typescript", "scss", "react-router-v6"],
+    topics: [
+      "react | ",
+      "redux | ",
+      "typescript | ",
+      "scss | ",
+      "react-router-v6",
+    ],
     html_url: "https://github.com/bartwo21/tour-project",
     live_url: "https://bartutourproject.netlify.app/",
     img: "/tour.webp",
@@ -70,7 +76,7 @@ export const projectData: PinnedData[] = [
   {
     name: "seat-charts",
     description: "Bus and default seating charts",
-    topics: ["react", "typescript", "rsuite", "react-icons"],
+    topics: ["react | ", "typescript | ", "rsuite | ", "react-icons"],
     html_url: "https://github.com/bartwo21/seat-charts",
     live_url: "https://seat-charts.vercel.app/",
     img: "/seat.webp",
@@ -79,7 +85,13 @@ export const projectData: PinnedData[] = [
     name: "mern-chat-app",
     description:
       "Real-time chat app with React, Express, MongoDB, and WebSocket.",
-    topics: ["react", "mongodb", "mongoose", "expressjs", "tailwindcss"],
+    topics: [
+      "react | ",
+      "mongodb | ",
+      "mongoose | ",
+      "expressjs | ",
+      "tailwindcss",
+    ],
     html_url: "https://github.com/bartwo21/chat-app",
     live_url:
       "https://66574e31cd59f833c0111219--dainty-fox-59bf9e.netlify.app/",
