@@ -1,4 +1,3 @@
-// components/Clouds.jsx
 import React from "react";
 import { IoCloud } from "react-icons/io5";
 
