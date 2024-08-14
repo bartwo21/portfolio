@@ -61,14 +61,8 @@ export const experienceData = [
 export const projectData: PinnedData[] = [
   {
     name: "tour-page",
-    description: "Interactive React-based travel platform.",
-    topics: [
-      "react | ",
-      "redux | ",
-      "typescript | ",
-      "scss | ",
-      "react-router-v6",
-    ],
+    description: "Dynamic Full-Stack Tour Booking Platform.",
+    topics: ["react | ", "redux | ", "typescript | ", "node.js | ", "mongodb"],
     html_url: "https://github.com/bartwo21/tour-project",
     live_url: "https://bartutourproject.netlify.app/",
     img: "/tour.webp",
