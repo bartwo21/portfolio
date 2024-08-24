@@ -91,4 +91,18 @@ export const projectData: PinnedData[] = [
       "https://66574e31cd59f833c0111219--dainty-fox-59bf9e.netlify.app/",
     img: "/chat.webp",
   },
+  {
+    name: "blog-app",
+    description: "Blog app with Next.js, Prisma and Kinde.",
+    topics: [
+      "next.js | ",
+      "tailwindcss | ",
+      "prisma | ",
+      "postgres | ",
+      "kinde",
+    ],
+    html_url: "https://github.com/bartwo21/my-blog",
+    live_url: "https://my-blog-wine-three.vercel.app/",
+    img: "/blog.webp",
+  },
 ];
