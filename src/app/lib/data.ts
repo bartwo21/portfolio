@@ -77,8 +77,7 @@ export const projectData: PinnedData[] = [
   },
   {
     name: "mern-chat-app",
-    description:
-      "Real-time chat app with React, Express, MongoDB, and WebSocket.",
+    description: "Real-time chat app with MERN and WebSocket.",
     topics: [
       "react | ",
       "mongodb | ",
