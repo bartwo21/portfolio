@@ -69,7 +69,8 @@ export const projectData: PinnedData[] = [
   },
   {
     name: "seat-charts",
-    description: "Bus and default seating charts",
+    description:
+      "Bus and event seat selection components, now as an npm package.",
     topics: ["react | ", "typescript | ", "rsuite | ", "react-icons"],
     html_url: "https://github.com/bartwo21/seat-charts",
     live_url: "https://seat-charts.vercel.app/",
