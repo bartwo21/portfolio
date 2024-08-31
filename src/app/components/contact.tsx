@@ -28,7 +28,7 @@ const Contact = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const isInWorkSection = scrollTop >= 2000 && scrollTop <= 3000;
+      const isInWorkSection = scrollTop >= 2200 && scrollTop <= 3000;
       if (isInWorkSection && selectedSection !== "contact") {
         setSelectedSection("contact");
       } else if (!isInWorkSection && selectedSection === "contact") {
@@ -74,7 +74,7 @@ const Contact = () => {
     <Tilt tiltEnable={false} scale={1.02} transitionSpeed={2500}>
       <form
         id="contact"
-        className="flex flex-col text-white p-8 bg-zinc-900 rounded-md w-full"
+        className="flex flex-col text-white p-8 bg-transparent rounded-md w-full"
         style={{
           boxShadow:
             "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px",

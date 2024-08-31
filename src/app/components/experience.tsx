@@ -33,7 +33,7 @@ const Experience = (props: Props) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const isInWorkSection = scrollTop >= 1300 && scrollTop <= 2000;
+      const isInWorkSection = scrollTop >= 1300 && scrollTop <= 2200;
       if (isInWorkSection && selectedSection !== "experience") {
         setSelectedSection("experience");
       } else if (!isInWorkSection && selectedSection === "experience") {
@@ -71,7 +71,7 @@ const Experience = (props: Props) => {
           boxShadow:
             "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px",
         }}
-        className="experience-tabs flex flex-col gap-6 text-white p-8 bg-zinc-900 rounded-md w-full min-h-80"
+        className="experience-tabs flex flex-col gap-6 text-white p-8 bg-transparent rounded-md w-full min-h-80"
       >
         <h1 className="text-xl text-sky-50 text-center">Experience</h1>
 

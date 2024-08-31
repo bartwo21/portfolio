@@ -225,7 +225,7 @@ const LeftBar: React.FC = (): ReactNode => {
         transition={{ duration: 1.5 }}
         className="xl:mt-auto mt-7 mb-16 flex gap-5"
       >
-        <div className="flex flex-col items-left gap-2 justify-between p-2 px-4 bg-zinc-900 rounded-md">
+        <div className="flex flex-col items-left gap-2 justify-between p-2 px-4 bg-transparent rounded-md">
           <ul className="flex justify-between gap-2 md:flex-row flex-col">
             <Link
               className="text-sm hover:text-sky-100 flex items-center gap-1 mr-2"

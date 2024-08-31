@@ -5,6 +5,7 @@ import Clouds from "./components/clouds";
 
 import LeftBar from "@/app/components/leftbar";
 import { ContextProvider } from "./context/store";
+import AnimatedColors from "./components/animatedColors";
 
 const inter = Montserrat({ weight: "400", subsets: ["latin"] });
 
@@ -15,7 +16,6 @@ export const metadata: Metadata = {
     icon: ["/favicon.ico"],
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,6 +29,7 @@ export default function RootLayout({
           <Clouds />
           <LeftBar />
           {children}
+          <AnimatedColors />
         </ContextProvider>
       </body>
     </html>

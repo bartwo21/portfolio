@@ -45,7 +45,7 @@ const Projectcards: React.FC = () => {
   }, []);
 
   return (
-    <div id="work" className="cards flex flex-col w-full gap-4">
+    <div id="work" className="cards flex flex-col w-full gap-6">
       <h1 className="text-xl text-sky-50 text-center mb-4">
         Pinned Repositories
       </h1>
@@ -69,8 +69,8 @@ const Projectcards: React.FC = () => {
               stiffness: 50,
             }}
             key={data.name}
-            className="card bg-zinc-900 rounded-md p-2 shadow-md flex justify-around items-center 2xl:w-full 2xl:flex-row flex-col"
-            style={{ boxShadow: "0 0px 20px 0 rgba(2, 59, 116, 0.24)" }}
+            className="card bg-transparent rounded-lg p-2 shadow-md flex justify-around items-center 2xl:w-full 2xl:flex-row flex-col"
+            style={{ boxShadow: "0 0px 20px 0 rgba(17, 72, 128, 0.164)" }}
           >
             <div className="left flex flex-col gap-2 2xl:w-4/12 w-full">
               <h2 className="text-sm font-semibold">
