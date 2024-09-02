@@ -6,6 +6,8 @@ import Clouds from "./components/clouds";
 import LeftBar from "@/app/components/leftbar";
 import { ContextProvider } from "./context/store";
 import AnimatedColors from "./components/animatedColors";
+import Stars from "./components/stars";
+import { ShootingStar } from "./components/fallingStar";
 
 const inter = Montserrat({ weight: "400", subsets: ["latin"] });
 
@@ -27,6 +29,8 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <ContextProvider>
           <Clouds />
+          <Stars />
+          <ShootingStar />
           <LeftBar />
           {children}
           <AnimatedColors />
