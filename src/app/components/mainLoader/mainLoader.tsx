@@ -6,7 +6,7 @@ import { Context, ContextType } from "../../context/store";
 import { motion } from "framer-motion";
 
 const MainLoader = () => {
-  const { loading, isLoaded } = useContext(Context) as ContextType;
+  const { loading, isLoaded, setLoading } = useContext(Context) as ContextType;
   const [delayedLoading, setDelayedLoading] = useState(true);
 
   useEffect(() => {

@@ -18,7 +18,6 @@
   top: 0;
   bottom: 0;
   right: 0;
-  background-color: #18181b;
   transition: all 0.2s ease-in-out;
   flex-direction: column;
   min-width: 100%;

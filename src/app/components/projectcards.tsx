@@ -46,9 +46,18 @@ const Projectcards: React.FC = () => {
 
   return (
     <div id="work" className="cards flex flex-col w-full gap-6">
-      <h1 className="text-xl text-sky-50 text-center mb-4">
+      <motion.h1
+        initial={{ x: -20, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{
+          duration: 1,
+          type: "spring",
+          stiffness: 50,
+        }}
+        className="text-xl text-sky-50 text-center mb-4"
+      >
         Pinned Repositories
-      </h1>
+      </motion.h1>
       {projectData?.map((data, index) => (
         <Tilt
           tiltEnable={false}
@@ -124,7 +133,16 @@ const Projectcards: React.FC = () => {
           </motion.div>
         </Tilt>
       ))}
-      <div className="flex w-full justify-end">
+      <motion.div
+        initial={{ x: -20, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{
+          duration: 1,
+          type: "spring",
+          stiffness: 50,
+        }}
+        className="flex w-full justify-end"
+      >
         <Link
           href={
             data ? "/projects" : "https://github.com/bartwo21?tab=repositories"
@@ -134,7 +152,7 @@ const Projectcards: React.FC = () => {
         >
           See all
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 };
