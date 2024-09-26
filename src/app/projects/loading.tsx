@@ -7,12 +7,12 @@ export default function Loading() {
       {Array.from({ length: 5 }).map((_, index) => (
         <div
           key={index}
-          className="bg-zinc-900 rounded-md p-5 shadow-md flex justify-between xl:w-full w-5/6 items-center min-h-24"
+          className="bg-transparent border border-slate-900 border-opacity-65 rounded-md p-5 shadow-md flex justify-between xl:w-full w-5/6 items-center min-h-24"
         >
           <div className="flex w-full flex-col gap-2">
-            <div className="w-4/6 h-4 bg-gray-600 rounded animate-pulse"></div>
-            <div className="w-3/6 h-4 bg-gray-600 rounded animate-pulse"></div>
-            <div className="w-5/6 h-4 bg-gray-600 rounded animate-pulse"></div>
+            <div className="w-4/6 h-4 bg-slate-900 rounded animate-pulse"></div>
+            <div className="w-3/6 h-4 bg-slate-900 rounded animate-pulse"></div>
+            <div className="w-5/6 h-4 bg-slate-900 rounded animate-pulse"></div>
           </div>
         </div>
       ))}

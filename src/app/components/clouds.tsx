@@ -61,7 +61,7 @@ const Clouds = () => {
   }, []);
 
   useEffect(() => {
-    const generatedClouds = generateClouds(15);
+    const generatedClouds = generateClouds(7);
     setClouds(generatedClouds);
 
     const updateMessages = () => {

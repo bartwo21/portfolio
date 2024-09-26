@@ -62,7 +62,7 @@ export const projectData: PinnedData[] = [
   {
     name: "tour-page",
     description: "Dynamic Full-Stack Tour Booking Platform.",
-    topics: ["react | ", "redux | ", "typescript | ", "node.js | ", "mongodb"],
+    topics: ["react  ", "redux  ", "typescript  ", "node.js  ", "mongodb"],
     html_url: "https://github.com/bartwo21/tour-project",
     live_url: "https://bartutourproject.netlify.app/",
     img: "/tour.webp",
@@ -70,7 +70,7 @@ export const projectData: PinnedData[] = [
   {
     name: "seat-charts",
     description: "Seat selection components as an npm package.",
-    topics: ["react | ", "typescript | ", "rsuite | ", "react-icons"],
+    topics: ["react  ", "typescript  ", "rsuite  ", "react-icons"],
     html_url: "https://github.com/bartwo21/seat-charts",
     live_url: "https://seat-charts.vercel.app/",
     img: "/seat.webp",
@@ -79,10 +79,10 @@ export const projectData: PinnedData[] = [
     name: "mern-chat-app",
     description: "Real-time chat app with MERN and WebSocket.",
     topics: [
-      "react | ",
-      "mongodb | ",
-      "mongoose | ",
-      "expressjs | ",
+      "react  ",
+      "mongodb  ",
+      "mongoose  ",
+      "expressjs  ",
       "tailwindcss",
     ],
     html_url: "https://github.com/bartwo21/chat-app",
@@ -93,13 +93,7 @@ export const projectData: PinnedData[] = [
   {
     name: "blog-app",
     description: "Blog app with Next.js, Prisma and Kinde.",
-    topics: [
-      "next.js | ",
-      "tailwindcss | ",
-      "prisma | ",
-      "postgres | ",
-      "kinde",
-    ],
+    topics: ["next.js  ", "tailwindcss  ", "prisma  ", "postgres  ", "kinde"],
     html_url: "https://github.com/bartwo21/my-blog",
     live_url: "https://my-blog-wine-three.vercel.app/",
     img: "/blog.webp",

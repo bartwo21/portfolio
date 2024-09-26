@@ -78,19 +78,23 @@ const Projectcards: React.FC = () => {
               stiffness: 50,
             }}
             key={data.name}
-            className="card bg-transparent rounded-lg p-2 shadow-md flex justify-around items-center 2xl:w-full 2xl:flex-row flex-col"
+            className="card bg-transparent rounded-lg p-2 shadow-md border border-slate-800 border-opacity-65 flex justify-around items-center 2xl:w-full 2xl:flex-row flex-col"
             style={{ boxShadow: "0 0px 20px 0 rgba(17, 72, 128, 0.164)" }}
           >
-            <div className="left flex flex-col gap-2 2xl:w-4/12 w-full">
-              <h2 className="text-sm font-semibold">
+            <div className="left flex flex-col gap-2 2xl:w-6/12 w-full">
+              <h1 className="text-xl font-bold">{data.name}</h1>
+              <p className="text-gray-500 font-bold w-8/12 text-sm">
+                {data.description}
+              </p>
+              <h2 className="text-sm font-semibold flex gap-1 flex-wrap mt-1">
                 {data.topics?.map((topic) => (
-                  <span key={topic} className="text-zinc-500">
-                    {topic + " "}
+                  <span key={topic} className="mb-[6px]">
+                    <span className="bg-slate-800 rounded-sm p-1 text-slate-400">
+                      {topic}
+                    </span>{" "}
                   </span>
                 ))}
               </h2>
-              <h1 className="text-xl font-bold">{data.name}</h1>
-              <p className="text-gray-600 w-8/12 text-xs">{data.description}</p>
             </div>
             <div className="flex sm:flex-row flex-col-reverse gap-3 mt-1">
               <div className="flex sm:flex-col flex-row sm:mt-0 mt-3 mb-0 justify-center items-center gap-8">

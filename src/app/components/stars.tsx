@@ -47,7 +47,7 @@ const Stars = () => {
   }, []);
 
   useEffect(() => {
-    const generatedStars = generateStars(30);
+    const generatedStars = generateStars(20);
     setStars(generatedStars);
   }, []);
 
