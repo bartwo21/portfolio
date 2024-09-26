@@ -60,6 +60,20 @@ export const experienceData = [
 
 export const projectData: PinnedData[] = [
   {
+    name: "mockiew",
+    description: "AI-powered interview platform.",
+    topics: [
+      "next.js  ",
+      "mongodb  ",
+      "vercel-ai-sdk  ",
+      "shadcn/ui  ",
+      "tailwindcss  ",
+    ],
+    html_url: "https://github.com/bartwo21/mockiew",
+    live_url: "https://mockiew.vercel.app/",
+    img: "/mockiew.webp",
+  },
+  {
     name: "tour-page",
     description: "Dynamic Full-Stack Tour Booking Platform.",
     topics: ["react  ", "redux  ", "typescript  ", "node.js  ", "mongodb"],
