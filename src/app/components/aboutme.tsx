@@ -13,7 +13,7 @@ const Aboutme = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const isInWorkSection = scrollTop >= 600 && scrollTop <= 1300;
+      const isInWorkSection = scrollTop >= 1000 && scrollTop <= 1600;
       if (isInWorkSection && selectedSection !== "about") {
         setSelectedSection("about");
       } else if (!isInWorkSection && selectedSection === "about") {

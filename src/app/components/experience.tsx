@@ -33,7 +33,7 @@ const Experience = (props: Props) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const isInWorkSection = scrollTop >= 1300 && scrollTop <= 2200;
+      const isInWorkSection = scrollTop >= 1600 && scrollTop <= 2300;
       if (isInWorkSection && selectedSection !== "experience") {
         setSelectedSection("experience");
       } else if (!isInWorkSection && selectedSection === "experience") {

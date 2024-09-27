@@ -28,7 +28,7 @@ const Contact = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const isInWorkSection = scrollTop >= 2200 && scrollTop <= 3000;
+      const isInWorkSection = scrollTop >= 2300 && scrollTop <= 3000;
       if (isInWorkSection && selectedSection !== "contact") {
         setSelectedSection("contact");
       } else if (!isInWorkSection && selectedSection === "contact") {

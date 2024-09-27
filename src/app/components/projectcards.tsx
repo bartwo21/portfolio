@@ -17,7 +17,7 @@ const Projectcards: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const isInWorkSection = scrollTop >= 0 && scrollTop <= 600;
+      const isInWorkSection = scrollTop >= 0 && scrollTop <= 700;
       if (isInWorkSection && selectedSection !== "work") {
         setSelectedSection("work");
       } else if (!isInWorkSection && selectedSection === "work") {
