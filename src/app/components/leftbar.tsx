@@ -1,10 +1,9 @@
 "use client";
 
 import React, { ReactNode, useContext, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { FaExternalLinkAlt } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaGithubSquare as FaGithub } from "react-icons/fa";
+
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { Context, ContextType } from "../context/store";
@@ -13,7 +12,8 @@ import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import AnimatedText from "./animatedText";
-import { IoIosMail } from "react-icons/io";
+// import { IoIosMail } from "react-icons/io";
+import { ImMail as IoIosMail } from "react-icons/im";
 
 const LeftBar: React.FC = (): ReactNode => {
   const { selectedSection, setSelectedSection } = useContext(
@@ -223,40 +223,38 @@ const LeftBar: React.FC = (): ReactNode => {
         initial="hidden"
         animate="visible"
         transition={{ duration: 1.5 }}
-        className="xl:mt-auto mt-7 mb-16 flex gap-5"
+        className="xl:mt-auto mt-7 mb-9 ml-1 flex gap-5"
       >
         <div className="flex flex-col items-left gap-2 justify-between p-2 px-4 bg-transparent rounded-md">
-          <ul className="flex justify-between gap-2 md:flex-row flex-col">
+          <ul className="flex justify-between gap-2 flex-row">
             <Link
-              className="text-sm hover:text-sky-100 flex items-center gap-1 mr-2"
+              className="text-sm hover:text-sky-300 flex items-center gap-1 mr-2 transition-colors"
               href="https://github.com/bartwo21"
               target="_blank"
             >
-              <FaGithub size={12} /> Github <FaExternalLinkAlt size={12} />
+              <FaGithub size={25} />
             </Link>
             <Link
-              className="text-sm hover:text-sky-100 flex items-center gap-1 mr-2"
+              className="text-sm hover:text-sky-300 flex items-center gap-1 mr-2 transition-colors"
               href="https://www.linkedin.com/in/bartwocakir/"
               target="_blank"
             >
-              <FaLinkedin size={12} /> LinkedIn <FaExternalLinkAlt size={12} />
+              <FaLinkedin size={25} />
             </Link>
             <Link
-              className="text-sm hover:text-sky-100 flex items-center gap-1 mr-2"
+              className="text-sm hover:text-sky-300 flex items-center gap-1 mr-2 transition-colors"
               href="https://www.instagram.com/bar.two/?hl=tr"
               target="_blank"
             >
-              <FaSquareInstagram size={12} /> Instagram{" "}
-              <FaExternalLinkAlt size={12} />
+              <FaSquareInstagram size={25} />
+            </Link>
+            <Link
+              className="text-sm hover:text-sky-300 flex items-center gap-1 transition-colors"
+              href="mailto:bartucakir21@gmail.com"
+            >
+              <IoIosMail size={24} />
             </Link>
           </ul>
-          <Link
-            className="text-sm hover:text-sky-100 flex items-center gap-1"
-            href="mailto:bartucakir21@gmail.com"
-          >
-            <IoIosMail size={16} /> bartucakir21@gmail.com{" "}
-            <FaExternalLinkAlt size={12} />
-          </Link>
         </div>
       </motion.div>
       <motion.div
@@ -267,9 +265,9 @@ const LeftBar: React.FC = (): ReactNode => {
         initial="hidden"
         animate="visible"
         transition={{ duration: 1.5 }}
-        className="fixed bottom-0 left-1/5 z-10 p-2 bg-slate-300 rounded-t-2xl opacity-40"
+        className="fixed bottom-0 left-1/5 z-10 p-2 bg-slate-300 rounded-t-2xl bg-opacity-55"
       >
-        <p className="text-xs text-gray-800 text-center">
+        <p className="text-xs text-gray-800 text-center text-opacity-85">
           Made with ❤️ by Bartu Çakır
         </p>
       </motion.div>

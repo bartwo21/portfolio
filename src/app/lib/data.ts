@@ -18,7 +18,9 @@ export type ExperienceData = {
   title: string;
   company: string;
   date: string;
-  description: string;
+  dateWith: string;
+  image: string;
+  description: (string | string[])[];
 };
 
 export async function fetchAllGithubRepos() {
@@ -45,16 +47,42 @@ export const experienceData = [
   {
     title: "Freelance Frontend Developer",
     company: "Gise.com",
-    date: "24/02/2024 - 30/03/2024",
-    description:
-      "I revamped the frontend of a website using React and TypeScript. The enhancements include an engaging homepage, detailed ticket pages, seat selection with special pricing, event search, blog sections, user operations, and a profile page. Additionally, I integrated bus and plane ticket searches, seat selection, and dedicated payment pages. I made all connections using REST APIs.",
+    date: "02/2024 - 03/2024",
+    dateWith: "Feb 2024 - Mar 2024",
+    image: "/gisecom_logo.png",
+    description: [
+      "Revamped the frontend of a website using React and TypeScript.",
+      "Enhancements made:",
+      [
+        "Engaging homepage",
+        "Detailed ticket pages",
+        "Seat selection with special pricing",
+        "Event search",
+        "Blog sections",
+        "User operations",
+        "Profile page",
+      ],
+      "Integrated bus and plane ticket searches, seat selection, and dedicated payment pages.",
+      "Established all connections using REST APIs.",
+    ],
   },
   {
     title: "Intern Frontend Developer",
     company: "Teknodev",
-    date: "17/05/2023 - 20/09/2023",
-    description:
-      "In my 4-month Frontend Development Internship at Teknodev, I gained hands-on experience with React, TypeScript, Redux, Tailwind CSS and SASS. Collaborating in a diverse team, I honed Git skills for version control, improving my adaptability in an agile development setting with a focus on clear communication and teamwork.",
+    dateWith: "May 2023 - Sep 2023",
+    date: "05/2023 - 09/2023",
+    image: "/teknodev_logo.jpeg",
+    description: [
+      "Completed a 4-month Frontend Development Internship at Teknodev.",
+      "Gained hands-on experience with:",
+      ["React", "TypeScript", "Redux", "Tailwind CSS", "SASS"],
+      "Collaborated in a diverse team to:",
+      [
+        "Hone Git skills for version control",
+        "Improve adaptability in an agile development setting",
+        "Focus on clear communication and teamwork",
+      ],
+    ],
   },
 ];
 
