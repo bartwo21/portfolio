@@ -73,7 +73,7 @@ export const experienceData = [
     date: "05/2023 - 09/2023",
     image: "/teknodev_logo.jpeg",
     description: [
-      "Completed a 4-month Frontend Development Internship at Teknodev.",
+      "Completed a 5-month Frontend Development Internship at Teknodev.",
       "Gained hands-on experience with:",
       ["React", "TypeScript", "Redux", "Tailwind CSS", "SASS"],
       "Collaborated in a diverse team to:",
