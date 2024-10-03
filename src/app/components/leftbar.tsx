@@ -265,7 +265,7 @@ const LeftBar: React.FC = (): ReactNode => {
         initial="hidden"
         animate="visible"
         transition={{ duration: 1.5 }}
-        className="fixed bottom-0 left-1/5 z-10 p-2 bg-slate-300 rounded-t-2xl bg-opacity-55"
+        className="fixed bottom-0 left-1/5 z-10 p-2 bg-slate-300 rounded-t-2xl bg-opacity-55 md:flex hidden"
       >
         <p className="text-xs text-gray-800 text-center text-opacity-85">
           Made with ❤️ by Bartu Çakır
