@@ -45,6 +45,14 @@ export async function fetchAllGithubRepos() {
 
 export const experienceData = [
   {
+    title: "Frontend Developer",
+    company: "Robosme",
+    date: "10/2024 - Present",
+    dateWith: "Oct 2024 - Present",
+    image: "/robokobi_logo.jpeg",
+    description: [],
+  },
+  {
     title: "Freelance Frontend Developer",
     company: "Gise.com",
     date: "02/2024 - 03/2024",
