@@ -34,7 +34,7 @@ const LeftBar: React.FC = (): ReactNode => {
         </h1>
         <div className="leading-7 text-lg w-11/12 text-white">
           <AnimatedText
-            words="Software Developer.A self-taught developer with an interest in Computer Science.🚀 Exploring opportunities and side projects. 💻 Currently specializing in Front-end Development."
+            words="Software Developer. A self-taught developer with an interest in Computer Science. 🚀 Exploring opportunities and side projects. 💻 Currently specializing in Front-end Development."
             delay={0.5}
           />
         </div>
@@ -58,7 +58,16 @@ const LeftBar: React.FC = (): ReactNode => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
           </div>
-          <p>Open to work</p>
+          <p>
+            Frontend Developer at{" "}
+            <Link
+              href="https://www.linkedin.com/company/robosme/posts/?feedView=all"
+              target="_blank"
+              className="text-purple-400 hover:text-purple-300 transition-colors"
+            >
+              Robosme
+            </Link>
+          </p>
         </motion.div>
         <motion.div
           variants={{

@@ -50,7 +50,22 @@ export const experienceData = [
     date: "10/2024 - Present",
     dateWith: "Oct 2024 - Present",
     image: "/robokobi_logo.jpeg",
-    description: [],
+    description: [
+      "Contributing to the modernization of CRM platform.",
+      "Key responsibilities include:",
+      [
+        "Developing features with Javascript, Knockout.js, SCSS",
+        "Transitioning features to React architecture",
+        "Maintaining robust front-end functionality",
+      ],
+      "Utilizing development tools:",
+      [
+        "Jira for task management",
+        "Azure DevOps for CI/CD",
+        "Git for version control",
+      ],
+      "Collaborating closely with designers and developers in an agile environment.",
+    ],
   },
   {
     title: "Freelance Frontend Developer",
@@ -83,7 +98,7 @@ export const experienceData = [
     description: [
       "Completed a 5-month Frontend Development Internship at Teknodev.",
       "Gained hands-on experience with:",
-      ["React", "TypeScript", "Redux", "Tailwind CSS", "SASS"],
+      ["React", "TypeScript", "Redux", "Tailwind CSS", "SCSS"],
       "Collaborated in a diverse team to:",
       [
         "Hone Git skills for version control",
