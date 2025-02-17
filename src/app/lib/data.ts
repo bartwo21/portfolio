@@ -54,7 +54,7 @@ export const experienceData = [
       "Contributing to the modernization of CRM platform.",
       "Key responsibilities include:",
       [
-        "Developing features using Knockout.js following the MVVM design pattern",
+        "Developing features using Javascript following the MVVM design pattern",
         "Redeveloping the entire project using React",
         "Maintaining robust front-end functionality",
       ],
