@@ -81,39 +81,43 @@ const Contact = () => {
         }}
       >
         <h1 className="text-xl text-sky-50 text-center mb-4">Contact Me</h1>
-        <div className="mb-5">
-          <label
-            htmlFor="name"
-            className="mb-3 block text-base font-medium text-white"
-          >
-            Full Name
-          </label>
-          <input
-            type="text"
-            placeholder="Full Name"
-            className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-sky-500 focus:shadow-md"
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            value={formData.name}
-            maxLength={40}
-          />
-        </div>
-        <div className="mb-5">
-          <label
-            htmlFor="email"
-            className="mb-3 block text-base font-medium text-white"
-          >
-            Email Address
-          </label>
-          <input
-            type="email"
-            placeholder="example@domain.com"
-            className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-sky-500 focus:shadow-md"
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
-            value={formData.email}
-            maxLength={40}
-          />
+        <div className="flex items-center justify-between gap-8">
+          <div className="mb-5 w-full">
+            <label
+              htmlFor="name"
+              className="mb-3 block text-base font-medium text-white"
+            >
+              Full Name
+            </label>
+            <input
+              type="text"
+              placeholder="Full Name"
+              className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-sky-500 focus:shadow-md"
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
+              value={formData.name}
+              maxLength={40}
+            />
+          </div>
+          <div className="mb-5 w-full">
+            <label
+              htmlFor="email"
+              className="mb-3 block text-base font-medium text-white"
+            >
+              Email Address
+            </label>
+            <input
+              type="email"
+              placeholder="example@domain.com"
+              className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-sky-500 focus:shadow-md"
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+              value={formData.email}
+              maxLength={40}
+            />
+          </div>
         </div>
         <div className="mb-5">
           <label

@@ -29,9 +29,9 @@ const Githuballrepos = ({ fetchData }: { fetchData: GithubRepoData[] }) => {
               <Link
                 href={data.html_url}
                 key={data.name}
-                className="card bg-transparent border border-gray-950 rounded-lg p-2 mr-2 flex justify-between cursor-pointer flex-col min-h-24"
+                className="card bg-transparent border border-gray-900 rounded-lg p-2 mr-2 flex justify-between cursor-pointer flex-col min-h-24"
                 target="_blank"
-                style={{ boxShadow: "0 0px 20px 0 rgba(17, 72, 128, 0.164)" }}
+                style={{ boxShadow: "0 0px 20px 0 rgba(17, 73, 128, 0.027)" }}
               >
                 <div className="left flex flex-col gap-2">
                   <h2 className="text-sm font-semibold">

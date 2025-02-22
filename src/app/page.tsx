@@ -46,11 +46,11 @@ export default function Home() {
       <Projectcards />
 
       <AnimatedComponent>
-        <Aboutme />
+        <Experience />
       </AnimatedComponent>
 
       <AnimatedComponent>
-        <Experience />
+        <Aboutme />
       </AnimatedComponent>
 
       <AnimatedComponent>

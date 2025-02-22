@@ -29,12 +29,12 @@ const LeftBar: React.FC = (): ReactNode => {
   return (
     <div className="md:w-1/2 w-4/6 min-[1208px]:h-screen min-[1208px]:sticky h-1/2 flex flex-col md:pt-32 pt-14 top-0 xl:gap-20 gap-6 mr-8">
       <div className="flex flex-col justify-between gap-3 ">
-        <h1 className="xl:text-6xl text-4xl font-medium text-sky-300">
+        <h1 className="xl:text-3xl text-2xl font-medium text-sky-300">
           <AnimatedText text="Bartu Çakır" delay={1} />
         </h1>
-        <div className="leading-7 text-lg w-11/12 text-white">
+        <div className="leading-7 text-md w-11/12 text-white">
           <AnimatedText
-            words="Software Developer. A self-taught developer with an interest in Computer Science. 🚀 Exploring opportunities and side projects. 💻 Currently specializing in Front-end Development."
+            words="Frontend Developer, passionate about modern web experiences. Building with React, JavaScript and TypeScript, focusing on user-centric applications. Eager to explore new technologies and best practices."
             delay={0.5}
           />
         </div>
@@ -131,37 +131,6 @@ const LeftBar: React.FC = (): ReactNode => {
           </li>
           <li
             onClick={() => {
-              setSelectedSection("about");
-              if (pathname === "/projects") router.push("/");
-            }}
-            className={`cursor-pointer w-4/6 transition-all font-extralight ${
-              selectedSection === "about"
-                ? "text-2xl font-semibold text-white"
-                : "text-xl"
-            }`}
-            style={{ width: "110px" }}
-          >
-            <LinkScroll
-              to="about"
-              smooth={true}
-              duration={500}
-              onClick={() => {
-                if (pathname === "/projects") router.push("/");
-              }}
-              className="relative inline-block group"
-            >
-              2 - About
-              <span
-                className={`absolute -bottom-1 left-0 right-0 h-0.5 origin-left bg-sky-300 transform scale-x-0 transition-transform duration-250 ease-in-out ${
-                  pathname === "/" && selectedSection === "about"
-                    ? "scale-x-100"
-                    : ""
-                }`}
-              ></span>
-            </LinkScroll>
-          </li>
-          <li
-            onClick={() => {
               setSelectedSection("experience");
               if (pathname === "/projects") router.push("/");
             }}
@@ -181,10 +150,41 @@ const LeftBar: React.FC = (): ReactNode => {
               }}
               className="relative inline-block group"
             >
-              3 - Experience
+              2 - Experience
               <span
                 className={`absolute -bottom-1 left-0 right-0 h-0.5 origin-left bg-sky-300 transform scale-x-0 transition-transform duration-250 ease-in-out ${
                   pathname === "/" && selectedSection === "experience"
+                    ? "scale-x-100"
+                    : ""
+                }`}
+              ></span>
+            </LinkScroll>
+          </li>
+          <li
+            onClick={() => {
+              setSelectedSection("about");
+              if (pathname === "/projects") router.push("/");
+            }}
+            className={`cursor-pointer w-4/6 transition-all font-extralight ${
+              selectedSection === "about"
+                ? "text-2xl font-semibold text-white"
+                : "text-xl"
+            }`}
+            style={{ width: "110px" }}
+          >
+            <LinkScroll
+              to="about"
+              smooth={true}
+              duration={500}
+              onClick={() => {
+                if (pathname === "/projects") router.push("/");
+              }}
+              className="relative inline-block group"
+            >
+              3 - About
+              <span
+                className={`absolute -bottom-1 left-0 right-0 h-0.5 origin-left bg-sky-300 transform scale-x-0 transition-transform duration-250 ease-in-out ${
+                  pathname === "/" && selectedSection === "about"
                     ? "scale-x-100"
                     : ""
                 }`}
