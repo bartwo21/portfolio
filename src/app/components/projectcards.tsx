@@ -83,7 +83,7 @@ const Projectcards: React.FC = () => {
           >
             <div className="left flex flex-col gap-2 2xl:w-6/12 w-full">
               <h1 className="text-md font-bold">{data.name}</h1>
-              <p className="text-gray-500 font-bold w-8/12 text-xs">
+              <p className="text-gray-500 font-bold w-full text-xs">
                 {data.description}
               </p>
               <h2 className="text-xs font-semibold flex gap-1 flex-wrap mt-1">

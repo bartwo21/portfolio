@@ -64,10 +64,7 @@ const Experience = (props: Props) => {
 
   return (
     <div id="experience">
-      <Tilt
-        tiltEnable={false}
-        scale={1.02}
-        transitionSpeed={2500}
+      <div
         style={{
           boxShadow:
             "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px",
@@ -165,7 +162,7 @@ const Experience = (props: Props) => {
             </AnimatePresence>
           )}
         </div>
-      </Tilt>
+      </div>
     </div>
   );
 };

@@ -71,7 +71,7 @@ const Contact = () => {
   };
 
   return (
-    <Tilt tiltEnable={false} scale={1.02} transitionSpeed={2500}>
+    <div>
       <form
         id="contact"
         className="flex flex-col text-white p-8 bg-transparent rounded-md w-full"
@@ -171,7 +171,7 @@ const Contact = () => {
           </div>
         </div>
       </form>
-    </Tilt>
+    </div>
   );
 };
 

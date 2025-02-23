@@ -99,10 +99,7 @@ const Aboutme = () => {
   }, [selectedSection, setSelectedSection]);
 
   return (
-    <Tilt
-      tiltEnable={false}
-      scale={1.02}
-      transitionSpeed={2500}
+    <div
       style={{
         boxShadow:
           "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px",
@@ -190,7 +187,7 @@ const Aboutme = () => {
           <TechStackSection title="Tools" skills={techStackData.tools} />
         </div>
       )}
-    </Tilt>
+    </div>
   );
 };
 
