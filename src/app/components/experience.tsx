@@ -2,7 +2,6 @@
 
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { ExperienceData, experienceData } from "../lib/data";
-import Tilt from "react-parallax-tilt";
 import { Context, ContextType } from "../context/store";
 import { AnimatePresence, Variants, motion, useAnimate } from "framer-motion";
 import Image from "next/image";

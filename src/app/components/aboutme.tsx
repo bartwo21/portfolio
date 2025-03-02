@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import { Context, ContextType } from "../context/store";
-import Tilt from "react-parallax-tilt";
+import { motion } from "framer-motion";
 import { journeyData, techStackData, workspaceData } from "../lib/data";
 import type { JourneyItem, TechStackItem, WorkspaceItem } from "../lib/data";
 
@@ -138,30 +138,35 @@ const Aboutme = () => {
           Tech Stack
         </button>
       </div>
+      <motion.div
+        key={activeTab}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        {activeTab === "journey" ? (
+          <div className="flex justify-center text-left flex-col">
+            <div className="w-full flex text-center justify-center mb-8">
+              <Image
+                src="/buyuk.webp"
+                width={400}
+                height={400}
+                alt="Picture"
+                className="rounded-md border-sky-100 border-2"
+              />
+            </div>
 
-      {activeTab === "journey" ? (
-        <div className="flex justify-center text-left flex-col">
-          <div className="w-full flex text-center justify-center mb-8">
-            <Image
-              src="/buyuk.webp"
-              width={400}
-              height={400}
-              alt="Picture"
-              className="rounded-md border-sky-100 border-2"
-            />
+            <div className="relative flex flex-col space-y-8 pl-6">
+              <div className="absolute left-[9px] top-[40px] bottom-0 w-0.5 bg-sky-400/10" />
+
+              {journeyData.map((item, index) => (
+                <JourneyItem key={index} {...item} />
+              ))}
+            </div>
           </div>
-
-          <div className="relative flex flex-col space-y-8 pl-6">
-            <div className="absolute left-[9px] top-[40px] bottom-0 w-0.5 bg-sky-400/10" />
-
-            {journeyData.map((item, index) => (
-              <JourneyItem key={index} {...item} />
-            ))}
-          </div>
-        </div>
-      ) : activeTab === "workspace" ? (
-        <div className="flex flex-col gap-6">
-          {/* <div className="w-full flex text-center justify-center">
+        ) : activeTab === "workspace" ? (
+          <div className="flex flex-col gap-6">
+            {/* <div className="w-full flex text-center justify-center">
             <Image
               src="/workspace.webp"
               width={400}
@@ -170,23 +175,24 @@ const Aboutme = () => {
               className="rounded-md border-sky-100 border-2"
             />
           </div> */}
-          <div className="space-y-4">
-            {workspaceData.map((section, index) => (
-              <WorkspaceSection key={index} {...section} />
-            ))}
+            <div className="space-y-4">
+              {workspaceData.map((section, index) => (
+                <WorkspaceSection key={index} {...section} />
+              ))}
+            </div>
           </div>
-        </div>
-      ) : (
-        <div className="flex flex-col">
-          <TechStackSection
-            title="Main Technologies"
-            skills={techStackData.mainTech}
-          />
-          <TechStackSection title="Styling" skills={techStackData.styling} />
-          <TechStackSection title="Backend" skills={techStackData.backend} />
-          <TechStackSection title="Tools" skills={techStackData.tools} />
-        </div>
-      )}
+        ) : (
+          <div className="flex flex-col">
+            <TechStackSection
+              title="Main Technologies"
+              skills={techStackData.mainTech}
+            />
+            <TechStackSection title="Styling" skills={techStackData.styling} />
+            <TechStackSection title="Backend" skills={techStackData.backend} />
+            <TechStackSection title="Tools" skills={techStackData.tools} />
+          </div>
+        )}
+      </motion.div>
     </div>
   );
 };
