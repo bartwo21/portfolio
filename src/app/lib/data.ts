@@ -68,8 +68,8 @@ export const experienceData = [
   {
     title: "Frontend Developer",
     company: "Robosme",
-    date: "10/2024 - Present",
-    dateWith: "Oct 2024 - Present",
+    date: "10/2024 - 03/2025",
+    dateWith: "Oct 2024 - Mar 2025",
     image: "/robokobi_logo.jpeg",
     description: [
       "Contributing to the modernization of CRM platform.",
