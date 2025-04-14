@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Context, ContextType } from "../context/store";
 import { FaGithub } from "react-icons/fa";
 import { VscRunAll } from "react-icons/vsc";
+import { GoArrowUpRight } from "react-icons/go";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
@@ -154,6 +155,7 @@ const Projectcards: React.FC = () => {
             data ? "/projects" : "https://github.com/bartwo21?tab=repositories"
           }
           target={data ? "_self" : "_blank"}
+          icon={<GoArrowUpRight size={14} />}
         />
       </motion.div>
     </div>

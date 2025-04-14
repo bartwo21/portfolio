@@ -9,6 +9,7 @@ type Props = {
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
   loading?: boolean;
+  icon?: React.ReactNode;
 };
 
 export default function MagicButton({
@@ -19,6 +20,7 @@ export default function MagicButton({
   type = "button",
   onClick,
   loading = false,
+  icon,
 }: Props) {
   const buttonContent = (
     <button
@@ -33,7 +35,10 @@ export default function MagicButton({
           <div className="w-6 h-6 border-t-2 border-r-2 border-b-0 border-l-0 border-gray-200 rounded-full animate-spin"></div>
         ) : (
           <>
-            {text}
+            <div className="flex items-center transition-transform duration-300 group-hover:scale-[1.03]">
+              {text}
+              {icon && <span className="ml-2 ">{icon}</span>}
+            </div>
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
           </>
         )}
