@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
 import { fetchAllGithubRepos, projectData } from "../lib/data";
+import MagicButton from "./MagicButton";
 
 const Projectcards: React.FC = () => {
   const { selectedSection, setSelectedSection, loading, setLoading } =
@@ -147,15 +148,13 @@ const Projectcards: React.FC = () => {
         }}
         className="flex w-full justify-end"
       >
-        <Link
+        <MagicButton
+          text="See all"
           href={
             data ? "/projects" : "https://github.com/bartwo21?tab=repositories"
           }
-          className="xl:w-1/4 w-1/2 text-center text-white border-2 hover:text-sky-300 shadow-[0_0px_9px_-2px_#54b4d3] active:shadow-none duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_0px_0px_0px_rgba(84,180,211,0.3),0_0px_14px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] border-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 transition-all"
           target={data ? "_self" : "_blank"}
-        >
-          See all
-        </Link>
+        />
       </motion.div>
     </div>
   );

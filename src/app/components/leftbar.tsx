@@ -14,6 +14,7 @@ import { motion } from "framer-motion";
 import AnimatedText from "./animatedText";
 // import { IoIosMail } from "react-icons/io";
 import { ImMail as IoIosMail } from "react-icons/im";
+import MagicButton from "./MagicButton";
 
 const LeftBar: React.FC = (): ReactNode => {
   const { selectedSection, setSelectedSection } = useContext(
@@ -70,14 +71,11 @@ const LeftBar: React.FC = (): ReactNode => {
           transition={{ duration: 1.5, delay: 1.5 }}
           className="mt-1 mb-2"
         >
-          <Link
-            download
+          <MagicButton
+            text="Download Resume"
             href="/BartuCakirCV.pdf"
-            className="xl:w-1/4 w-1/2 text-center text-white border-2 hover:text-sky-300 shadow-[0_0px_9px_-2px_#54b4d3] active:shadow-none duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_0px_0px_0px_rgba(84,180,211,0.3),0_0px_14px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] border-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 transition-all"
             target="_blank"
-          >
-            Download Resume
-          </Link>
+          />
         </motion.div>
         <motion.ul
           variants={{

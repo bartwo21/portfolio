@@ -6,6 +6,7 @@ import Tilt from "react-parallax-tilt";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import MagicButton from "./MagicButton";
 
 const Githuballrepos = ({ fetchData }: { fetchData: GithubRepoData[] }) => {
   const GitHubCalendar = dynamic(() => import("react-github-calendar"));
@@ -69,12 +70,7 @@ const Githuballrepos = ({ fetchData }: { fetchData: GithubRepoData[] }) => {
         year="last"
         style={{ maxWidth: "960px!important", marginTop: "-20px" }}
       />
-      <Link
-        href="/"
-        className="xl:w-2/4 w-1/2 text-center text-white border-2 hover:text-sky-300 border-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 transition-all"
-      >
-        Back to home
-      </Link>
+      <MagicButton text="Back to home" href="/" target="_self" />
     </motion.div>
   );
 };

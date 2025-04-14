@@ -111,7 +111,7 @@ const Aboutme = () => {
           onClick={() => setActiveTab("journey")}
           className={`px-4 py-2 rounded-md transition-all ${
             activeTab === "journey"
-              ? "bg-sky-600 text-white"
+              ? "bg-sky-400 text-white"
               : "bg-transparent text-sky-300 hover:bg-sky-600/20"
           }`}
         >
@@ -121,7 +121,7 @@ const Aboutme = () => {
           onClick={() => setActiveTab("workspace")}
           className={`px-4 py-2 rounded-md transition-all ${
             activeTab === "workspace"
-              ? "bg-sky-600 text-white"
+              ? "bg-sky-400 text-white"
               : "bg-transparent text-sky-300 hover:bg-sky-600/20"
           }`}
         >
@@ -131,7 +131,7 @@ const Aboutme = () => {
           onClick={() => setActiveTab("techstack")}
           className={`px-4 py-2 rounded-md transition-all ${
             activeTab === "techstack"
-              ? "bg-sky-600 text-white"
+              ? "bg-sky-400 text-white"
               : "bg-transparent text-sky-300 hover:bg-sky-600/20"
           }`}
         >
