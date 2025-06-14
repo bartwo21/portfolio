@@ -6,11 +6,9 @@ import { Context, ContextType } from "../context/store";
 import { AnimatePresence, Variants, motion, useAnimate } from "framer-motion";
 import Image from "next/image";
 
-type Props = {};
-
-const Experience = (props: Props) => {
+const Experience = () => {
   const [selectedCompany, setSelectedCompany] = useState<string | null>(
-    "Robosme"
+    "Rmos Yazılım"
   );
   const [selectedExperience, setSelectedExperience] =
     useState<ExperienceData | null>(experienceData[0]);

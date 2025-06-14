@@ -67,6 +67,14 @@ export async function fetchAllGithubRepos() {
 export const experienceData = [
   {
     title: "Frontend Developer",
+    company: "Rmos Yazılım",
+    date: "05/2025 - Present",
+    dateWith: "May 2025 - Present",
+    image: "/rmos_logo.jpeg",
+    description: []
+  },
+  {
+    title: "Frontend Developer",
     company: "Robosme",
     date: "10/2024 - 03/2025",
     dateWith: "Oct 2024 - Mar 2025",
@@ -194,6 +202,11 @@ export type JourneyItem = {
 };
 
 export const journeyData: JourneyItem[] = [
+  {
+    year: "2025",
+    title: "Frontend Developer at Rmos Yazılım",
+    description: ""
+  },
   {
     year: "2024",
     title: "Frontend Developer at Robosme",
