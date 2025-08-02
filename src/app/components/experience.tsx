@@ -5,6 +5,8 @@ import { ExperienceData, experienceData } from "../lib/data";
 import { Context, ContextType } from "../context/store";
 import { AnimatePresence, Variants, motion, useAnimate } from "framer-motion";
 import Image from "next/image";
+import MagicButton from "./MagicButton";
+import { GoArrowUpRight } from "react-icons/go";
 
 const Experience = () => {
   const [selectedCompany, setSelectedCompany] = useState<string | null>(
@@ -71,35 +73,24 @@ const Experience = () => {
         <h1 className="text-xl text-sky-50 text-center">Experience</h1>
 
         <div className="flex lg:flex-row flex-col gap-2">
-          <div className="tab-titles flex flex-col gap-2 mr-2">
-            {uniqueCompanies.map((company) => (
-              // if div have a underline then give layoutId = "underline"
-              <div
-                key={company}
-                className={`text-center text-white border-2 shadow-[0_0px_9px_-2px_#54b4d3] active:shadow-none duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_0px_0px_0px_rgba(84,180,211,0.3),0_0px_14px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] border-sky-300 rounded-lg text-sm font-semibold px-2 py-2.5 transition-all cursor-pointer ${
-                  selectedCompany !== company
-                    ? "bg-transparent"
-                    : " focus:outline-none dark:bg-sky-400 "
-                }`}
-                style={{ minWidth: "145px" }}
-                onClick={() =>
-                  selectedCompany === company
-                    ? null
-                    : handleCompanyClick(company)
-                }
-              >
-                {company} <br />{" "}
-                <p
-                  className={`text-[11px] text-white ${
-                    selectedCompany === company
-                      ? "text-opacity-80"
-                      : "text-opacity-30"
-                  }`}
-                >
-                  {experienceData.find((exp) => exp.company === company)?.date}
-                </p>
-              </div>
-            ))}
+          <div className="tab-titles flex flex-col gap-3 mr-2">
+            {uniqueCompanies.map((company) => {
+              const isSelected = selectedCompany === company;
+              const companyData = experienceData.find((exp) => exp.company === company);
+              return (
+                <div key={company} className="flex flex-col gap-1">
+                  <MagicButton
+                    text={`${company}\n${companyData?.date}`}
+                    onClick={() =>
+                      isSelected ? null : handleCompanyClick(company)
+                    }
+                    type="button"
+                    className="min-h-14 !flex-col !items-center whitespace-pre-line"
+                    isActive={isSelected}
+                  />
+                </div>
+              );
+            })}
           </div>
 
           {selectedExperience && (

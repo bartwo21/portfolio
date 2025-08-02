@@ -144,17 +144,13 @@ const Contact = () => {
         <div className="flex justify-between">
           <MagicButton text="Submit" type="submit" loading={loading} />
           <div className="relative">
-            <Link
-              type="button"
-              className="relative z-10 cursor-pointer text-center bg-sky-500 text-white border-2 hover:text-sky-50 shadow-[0_0px_9px_-2px_#54b4d3] active:shadow-none duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_0px_0px_0px_rgba(84,180,211,0.3),0_0px_14px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] border-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 transition-all overflow-hidden"
-              href="https://calendly.com/bartucakir/30min"
+            <MagicButton 
+              text="Calendly" 
+              href="https://calendly.com/bartucakir/30min" 
               target="_blank"
-            >
-              <div className="p-0.5">
-                <p>Calendly</p>
-              </div>
-            </Link>
-            <div className="absolute flex top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sky-200 opacity-0 transition-opacity duration-500 hover:opacity-100 cloud-icon">
+              className="z-20"
+            />
+            <div className="absolute flex top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-sky-200 opacity-0 transition-opacity duration-500 hover:opacity-100 cloud-icon">
               <p className="text-xs w-full whitespace-nowrap">Lets Talk 📅</p>
             </div>
           </div>

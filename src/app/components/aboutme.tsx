@@ -6,6 +6,7 @@ import { Context, ContextType } from "../context/store";
 import { motion } from "framer-motion";
 import { journeyData, techStackData, workspaceData } from "../lib/data";
 import type { JourneyItem, TechStackItem, WorkspaceItem } from "../lib/data";
+import MagicButton from "./MagicButton";
 
 const TimelinePoint = () => (
   <div className="absolute -left-[24px] w-5 h-5 rounded-full border-2 border-sky-400/10 bg-sky-950 z-10" />
@@ -107,36 +108,24 @@ const Aboutme = () => {
       className="about-me min-h-1/2 min-w-min p-8 bg-transparent rounded-md"
     >
       <div className="flex gap-4 justify-center mb-6" id="about">
-        <button
+        <MagicButton
+          text="Journey"
           onClick={() => setActiveTab("journey")}
-          className={`px-4 py-2 rounded-md transition-all ${
-            activeTab === "journey"
-              ? "bg-sky-400 text-white"
-              : "bg-transparent text-sky-300 hover:bg-sky-600/20"
-          }`}
-        >
-          Journey
-        </button>
-        <button
+          isActive={activeTab === "journey"}
+          type="button"
+        />
+        <MagicButton
+          text="Workspace"
           onClick={() => setActiveTab("workspace")}
-          className={`px-4 py-2 rounded-md transition-all ${
-            activeTab === "workspace"
-              ? "bg-sky-400 text-white"
-              : "bg-transparent text-sky-300 hover:bg-sky-600/20"
-          }`}
-        >
-          Workspace
-        </button>
-        <button
+          isActive={activeTab === "workspace"}
+          type="button"
+        />
+        <MagicButton
+          text="Tech Stack"
           onClick={() => setActiveTab("techstack")}
-          className={`px-4 py-2 rounded-md transition-all ${
-            activeTab === "techstack"
-              ? "bg-sky-400 text-white"
-              : "bg-transparent text-sky-300 hover:bg-sky-600/20"
-          }`}
-        >
-          Tech Stack
-        </button>
+          isActive={activeTab === "techstack"}
+          type="button"
+        />
       </div>
       <motion.div
         key={activeTab}
