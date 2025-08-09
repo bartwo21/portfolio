@@ -15,7 +15,11 @@ export const metadata: Metadata = {
   title: "Bartu | Personal Portfolio",
   description: "Bartu Cakir Portfolio",
   icons: {
-    icon: ["/favicon.ico"],
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 export default function RootLayout({
@@ -26,7 +30,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
         <ContextProvider>
           <Clouds />
           <Stars />
