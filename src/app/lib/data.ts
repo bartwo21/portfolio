@@ -71,7 +71,9 @@ export const experienceData = [
     date: "05/2025 - Present",
     dateWith: "May 2025 - Present",
     image: "/rmos_logo.jpeg",
-    description: []
+    description: [
+      ["Next.js | React.js | Ag Grid", "Zod | TanStack Query | TailwindCSS", "Github Actions | Coolify | Docker", "Zustand | Mantine | Turborepo", "Feature-Based Architecture | Hotel Management Systems | ERP"]
+    ]
   },
   {
     title: "Frontend Developer",
