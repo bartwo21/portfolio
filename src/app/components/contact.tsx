@@ -40,7 +40,7 @@ const Contact = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [selectedSection]);
+  }, [selectedSection, setSelectedSection]);
 
   const send = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -77,26 +77,26 @@ const Contact = () => {
     <div>
       <form
         id="contact"
-        className="flex flex-col text-white p-8 bg-transparent rounded-md w-full"
+        className="flex flex-col text-white p-4 md:p-8 bg-transparent rounded-md w-full"
         style={{
           boxShadow:
             "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px",
         }}
         onSubmit={send}
       >
-        <h1 className="text-xl text-sky-50 text-center mb-4">Contact Me</h1>
-        <div className="flex items-center justify-between gap-8">
+        <h1 className="text-lg md:text-xl text-sky-50 text-center mb-4">Contact Me</h1>
+        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 md:gap-8">
           <div className="mb-5 w-full">
             <label
               htmlFor="name"
-              className="mb-3 block text-base font-medium text-white"
+              className="mb-3 block text-sm md:text-base font-medium text-white"
             >
               Full Name
             </label>
             <input
               type="text"
               placeholder="Full Name"
-              className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-sky-500 focus:shadow-md"
+              className="w-full rounded-md border border-gray-300 bg-white py-2 md:py-3 px-4 md:px-6 text-sm md:text-base font-medium text-gray-700 outline-none focus:border-sky-500 focus:shadow-md"
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })
               }
@@ -107,14 +107,14 @@ const Contact = () => {
           <div className="mb-5 w-full">
             <label
               htmlFor="email"
-              className="mb-3 block text-base font-medium text-white"
+              className="mb-3 block text-sm md:text-base font-medium text-white"
             >
               Email Address
             </label>
             <input
               type="email"
               placeholder="example@domain.com"
-              className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-sky-500 focus:shadow-md"
+              className="w-full rounded-md border border-gray-300 bg-white py-2 md:py-3 px-4 md:px-6 text-sm md:text-base font-medium text-gray-700 outline-none focus:border-sky-500 focus:shadow-md"
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
               }
@@ -126,14 +126,14 @@ const Contact = () => {
         <div className="mb-5">
           <label
             htmlFor="message"
-            className="mb-3 block text-base font-medium text-white"
+            className="mb-3 block text-sm md:text-base font-medium text-white"
           >
             Message
           </label>
           <textarea
             rows={4}
             placeholder="Type your message"
-            className="w-full resize-none rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-sky-500 focus:shadow-md"
+            className="w-full resize-none rounded-md border border-gray-300 bg-white py-2 md:py-3 px-4 md:px-6 text-sm md:text-base font-medium text-gray-700 outline-none focus:border-sky-500 focus:shadow-md"
             onChange={(e) =>
               setFormData({ ...formData, message: e.target.value })
             }
@@ -141,14 +141,14 @@ const Contact = () => {
             maxLength={500}
           ></textarea>
         </div>
-        <div className="flex justify-between">
+        <div className="flex flex-col md:flex-row justify-between gap-4">
           <MagicButton text="Submit" type="submit" loading={loading} />
-          <div className="relative">
-            <MagicButton 
-              text="Calendly" 
-              href="https://calendly.com/bartucakir/30min" 
+          <div className="relative w-full md:w-auto">
+            <MagicButton
+              text="Calendly"
+              href="https://calendly.com/bartucakir/30min"
               target="_blank"
-              className="z-20"
+              className="z-20 w-full"
             />
             <div className="absolute flex top-1/2 left-1/2 transform -translate-x-1/2 z-10 -translate-y-1/2 text-sky-200 opacity-0 transition-opacity duration-500 hover:opacity-100 cloud-icon">
               <p className="text-xs w-full whitespace-nowrap">Lets Talk 📅</p>

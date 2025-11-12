@@ -80,7 +80,7 @@ const Projectcards: React.FC = () => {
               stiffness: 50,
             }}
             key={data.name}
-            className="card bg-transparent rounded-lg shadow-md border border-slate-800 border-opacity-65 flex justify-around items-center 2xl:w-full 2xl:flex-row flex-col lg:p-0 p-4"
+            className="card bg-transparent rounded-lg shadow-md border border-slate-800 border-opacity-65 flex justify-around items-center 2xl:w-full 2xl:flex-row flex-col 2xl:p-0 p-4"
             style={{ boxShadow: "0 0px 20px 0 rgba(17, 72, 128, 0.164)" }}
           >
             <div className="left flex flex-col gap-2 2xl:w-6/12 w-full">
@@ -119,7 +119,7 @@ const Projectcards: React.FC = () => {
                 style={{
                   transformStyle: "preserve-3d",
                 }}
-                className="img xl:w-52 2xl:mt-3 xl:mb-4 mt-4 px-1 hover:ml-10"
+                className="img 2xl:w-52 lg:w-68 2xl:mt-3 2xl:mb-4 lg:mb-0 mt-4 px-1 hover:ml-10"
                 scale={1.25}
               >
                 <Link href={data.live_url} target="_blank">

@@ -9,7 +9,7 @@ import type { JourneyItem, TechStackItem, WorkspaceItem } from "../lib/data";
 import MagicButton from "./MagicButton";
 
 const TimelinePoint = () => (
-  <div className="absolute -left-[24px] w-5 h-5 rounded-full border-2 border-sky-400/10 bg-sky-950 z-10" />
+  <div className="absolute -left-[16px] md:-left-[24px] w-4 h-4 md:w-5 md:h-5 rounded-full border-2 border-sky-400/10 bg-sky-950 z-10" />
 );
 
 const JourneyItem: React.FC<JourneyItem> = ({
@@ -20,11 +20,11 @@ const JourneyItem: React.FC<JourneyItem> = ({
 }) => (
   <div className="relative">
     <TimelinePoint />
-    <div className="ml-4">
-      <h3 className="text-white mb-2">
+    <div className="ml-3 md:ml-4">
+      <h3 className="text-white mb-2 text-sm md:text-base">
         {year} - {title}
       </h3>
-      <p className="md:text-xs text-xs">
+      <p className="text-xs md:text-sm">
         {description}{" "}
         {highlights && (
           <span className="text-sky-300">{highlights.join(", ")}</span>
@@ -36,10 +36,10 @@ const JourneyItem: React.FC<JourneyItem> = ({
 
 const WorkspaceSection: React.FC<WorkspaceItem> = ({ title, items }) => (
   <div>
-    <h3 className="text-sky-300 text-lg mb-2">{title}</h3>
-    <ul className="text-sm space-y-1">
+    <h3 className="text-sky-300 text-base md:text-lg mb-2">{title}</h3>
+    <ul className="text-xs md:text-sm space-y-1">
       {items.map((item, itemIndex) => (
-        <li key={itemIndex} className="flex items-center gap-2">
+        <li key={itemIndex} className="flex items-center gap-2 flex-wrap">
           <span>{item.name}</span>
           {item.link && (
             <a
@@ -61,16 +61,16 @@ const TechStackSection: React.FC<{
   title: string;
   skills: TechStackItem[];
 }> = ({ title, skills }) => (
-  <div className="mb-8">
-    <h3 className="text-sky-300 text-lg mb-4">{title}</h3>
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+  <div className="mb-6 md:mb-8">
+    <h3 className="text-sky-300 text-base md:text-lg mb-3 md:mb-4">{title}</h3>
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
       {skills.map((skill, index) => (
         <div
           key={index}
-          className="flex items-center gap-2 p-3 rounded-lg bg-sky-950/10 hover:bg-sky-900/20 transition-all"
+          className="flex items-center gap-1 md:gap-2 p-2 md:p-3 rounded-lg bg-sky-950/10 hover:bg-sky-900/20 transition-all"
         >
-          <skill.icon className={`text-2xl ${skill.color}`} />
-          <span className="text-sm">{skill.name}</span>
+          <skill.icon className={`text-xl md:text-2xl ${skill.color}`} />
+          <span className="text-xs md:text-sm">{skill.name}</span>
         </div>
       ))}
     </div>
@@ -105,9 +105,9 @@ const Aboutme = () => {
         boxShadow:
           "rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px",
       }}
-      className="about-me min-h-1/2 min-w-min p-8 bg-transparent rounded-md"
+      className="about-me min-h-1/2 min-w-min p-4 md:p-8 bg-transparent rounded-md"
     >
-      <div className="flex gap-4 justify-center mb-6" id="about">
+      <div className="flex flex-wrap gap-2 md:gap-4 justify-center mb-4 md:mb-6" id="about">
         <MagicButton
           text="Journey"
           onClick={() => setActiveTab("journey")}
@@ -135,18 +135,18 @@ const Aboutme = () => {
       >
         {activeTab === "journey" ? (
           <div className="flex justify-center text-left flex-col">
-            <div className="w-full flex text-center justify-center mb-8">
+            <div className="w-full flex text-center justify-center mb-6 md:mb-8">
               <Image
                 src="/buyuk.webp"
                 width={400}
                 height={400}
                 alt="Picture"
-                className="rounded-md border-sky-100 border-2"
+                className="rounded-md border-sky-100 border-2 w-full max-w-[300px] md:max-w-[400px] h-auto"
               />
             </div>
 
-            <div className="relative flex flex-col space-y-8 pl-6">
-              <div className="absolute left-[9px] top-[40px] bottom-0 w-0.5 bg-sky-400/10" />
+            <div className="relative flex flex-col space-y-6 md:space-y-8 pl-4 md:pl-6">
+              <div className="absolute left-[5px] md:left-[9px] top-[40px] bottom-0 w-0.5 bg-sky-400/10" />
 
               {journeyData.map((item, index) => (
                 <JourneyItem key={index} {...item} />
@@ -154,7 +154,7 @@ const Aboutme = () => {
             </div>
           </div>
         ) : activeTab === "workspace" ? (
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4 md:gap-6">
             {/* <div className="w-full flex text-center justify-center">
             <Image
               src="/workspace.webp"
@@ -164,7 +164,7 @@ const Aboutme = () => {
               className="rounded-md border-sky-100 border-2"
             />
           </div> */}
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               {workspaceData.map((section, index) => (
                 <WorkspaceSection key={index} {...section} />
               ))}
