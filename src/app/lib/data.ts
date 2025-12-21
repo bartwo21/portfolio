@@ -196,6 +196,23 @@ export const projectData: PinnedData[] = [
   },
 ];
 
+export const myAppsData: PinnedData[] = [
+  {
+    name: "Resuup",
+    description: "AI-powered CV transformer and builder SaaS.",
+    topics: [
+      "Next.js 15",
+      "Supabase",
+      "OpenAI",
+      "Lemon Squeezy",
+      "Upstash Redis"
+    ],
+    html_url: "",
+    live_url: "https://resuup.com",
+    img: "/resuup.png",
+  },
+];
+
 export type JourneyItem = {
   year: string;
   title: string;

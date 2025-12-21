@@ -2,6 +2,7 @@
 
 import Aboutme from "@/app/components/aboutme";
 import Projectcards from "@/app/components/projectcards";
+import MyApps from "@/app/components/myapps";
 import Contact from "@/app/components/contact";
 import { ToastContainer } from "react-toastify";
 import Experience from "./components/experience";
@@ -43,6 +44,7 @@ export default function Home() {
       <ToastContainer stacked />
       <MainLoader />
 
+      <MyApps />
       <Projectcards />
 
       <AnimatedComponent>
