@@ -3,16 +3,14 @@
 import React, { ReactNode, useContext, useEffect } from "react";
 import Link from "next/link";
 import { FaGithubSquare as FaGithub } from "react-icons/fa";
-
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { Context, ContextType } from "../context/store";
 import { Link as LinkScroll } from "react-scroll";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import AnimatedText from "./animatedText";
-// import { IoIosMail } from "react-icons/io";
 import { ImMail as IoIosMail } from "react-icons/im";
 import MagicButton from "./MagicButton";
 
@@ -25,250 +23,136 @@ const LeftBar: React.FC = (): ReactNode => {
 
   useEffect(() => {
     if (pathname === "/projects") setSelectedSection("");
-  }, [pathname]);
+  }, [pathname, setSelectedSection]);
+
+  const navItems = [
+    { id: "work", label: "Work", number: "01" },
+    { id: "experience", label: "Experience", number: "02" },
+    { id: "about", label: "About", number: "03" },
+    { id: "contact", label: "Contact", number: "04" },
+  ];
 
   return (
-    <div className="md:w-1/2 w-4/6 min-[1208px]:h-screen min-[1208px]:sticky h-1/2 flex flex-col md:pt-32 pt-14 top-0 xl:gap-20 gap-6 mr-8">
-      <div className="flex flex-col justify-between gap-3 ">
-        <h1 className="xl:text-3xl text-2xl font-medium text-sky-300">
-          <AnimatedText text="Bartu Çakır" delay={1} />
-        </h1>
-        <div className="leading-7 text-md w-11/12 text-white">
+    <div className="md:w-1/3 w-full min-[1208px]:h-screen min-[1208px]:sticky h-auto mr-auto flex flex-col md:pt-32 pt-14 top-0 xl:gap-24 gap-12 px-6 md:px-0">
+      {/* Header Section */}
+      <div className="space-y-6">
+        <div className="space-y-2">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="text-sky-300/60 font-black tracking-[0.5em] uppercase text-[10px] block"
+          >
+            Software Engineer
+          </motion.span>
+          <h1 className="xl:text-7xl text-5xl font-extralight tracking-tighter text-white leading-none">
+            Bartu <span className="font-serif italic text-sky-200">Çakır</span>
+          </h1>
+        </div>
+
+        <div className="leading-relaxed text-sm md:text-base w-full xl:w-11/12 text-sky-100/50 font-light italic">
           <AnimatedText
-            words="Frontend Developer, passionate about modern web experiences. Building with React, JavaScript and TypeScript, focusing on user-centric applications. Eager to explore new technologies and best practices."
-            delay={0.5}
+            words="Building immersive digital experiences with a focus on clean aesthetics and high-performance architecture. Currently exploring the intersections of design and engineering."
+            delay={0.2}
           />
         </div>
+
+        {/* Availability Badge */}
         <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 25 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          initial="hidden"
-          animate="visible"
-          transition={{
-            type: "spring",
-            damping: "12",
-            stiffness: "50",
-            duration: 1.5,
-            delay: 1.2,
-          }}
-          className="flex items-center gap-2 mt-5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="flex items-center gap-3 py-2 px-4 bg-white/5 border border-white/10 rounded-full w-fit backdrop-blur-sm"
         >
-          <div className="gap-2 relative flex h-3 w-3">
+          <div className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-400"></span>
           </div>
-          <p>Open to new opportunities</p>
+          <span className="text-[10px] font-bold tracking-widest uppercase text-sky-100/80">
+            Available for new projects
+          </span>
         </motion.div>
-        <motion.div
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1 },
-          }}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 1.5, delay: 1.5 }}
-          className="mt-1 mb-2"
+      </div>
+
+      {/* Navigation Section */}
+      <nav>
+        <motion.ul
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="space-y-4"
         >
+          {navItems.map((item) => {
+            const isActive = selectedSection === item.id;
+            return (
+              <li
+                key={item.id}
+                onClick={() => {
+                  setSelectedSection(item.id);
+                  if (pathname === "/projects") router.push("/");
+                }}
+                className="group w-fit"
+              >
+                <LinkScroll
+                  to={item.id}
+                  smooth={true}
+                  duration={500}
+                  className="flex items-center gap-6 cursor-pointer py-1"
+                >
+                  <span className={`text-[10px] font-black tracking-widest transition-colors duration-500 ${isActive ? "text-sky-300" : "text-white/20 group-hover:text-white/40"}`}>
+                    {item.number}
+                  </span>
+                  <span className={`text-2xl tracking-tight transition-all duration-500 ${isActive ? "text-white font-medium pl-4" : "text-white/40 font-extralight group-hover:text-white group-hover:pl-2"}`}>
+                    {item.label}
+                  </span>
+                </LinkScroll>
+              </li>
+            );
+          })}
+        </motion.ul>
+      </nav>
+
+      {/* Footer Section */}
+      <div className="xl:mt-auto space-y-8 pb-12">
+        <div className="flex flex-col gap-6">
           <MagicButton
-            text="Download Resume"
+            text="Get Resume"
             href="/BartuCakirCV.pdf"
             target="_blank"
+            className="w-full xl:w-64"
           />
-        </motion.div>
-        <motion.ul
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1 },
-          }}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 1.5, delay: 1 }}
-          className="mt-8 gap-3 flex flex-col"
-        >
-          <li
-            onClick={() => {
-              setSelectedSection("work");
-              if (pathname === "/projects") router.push("/");
-            }}
-            className={`cursor-pointer w-4/6 transition-all font-extralight ${
-              selectedSection === "work"
-                ? "text-2xl font-semibold text-white"
-                : "text-xl"
-            }`}
-            style={{ width: "100px" }}
-          >
-            <LinkScroll
-              to="work"
-              smooth={true}
-              duration={500}
-              onClick={() => {
-                if (pathname === "/projects") router.push("/");
-              }}
-              className="relative inline-block group"
-            >
-              1 - Work
-              <span
-                className={`absolute -bottom-1 left-0 right-0 h-0.5 origin-left bg-sky-300 transform scale-x-0 transition-transform duration-250 ease-in-out ${
-                  pathname === "/" && selectedSection === "work"
-                    ? "scale-x-100"
-                    : ""
-                }`}
-              ></span>
-            </LinkScroll>
-          </li>
-          <li
-            onClick={() => {
-              setSelectedSection("experience");
-              if (pathname === "/projects") router.push("/");
-            }}
-            className={`cursor-pointer w-4/6 transition-all font-extralight ${
-              selectedSection === "experience"
-                ? "text-2xl font-semibold text-white"
-                : "text-xl"
-            }`}
-            style={{ width: "170px" }}
-          >
-            <LinkScroll
-              to="experience"
-              smooth={true}
-              duration={500}
-              onClick={() => {
-                if (pathname === "/projects") router.push("/");
-              }}
-              className="relative inline-block group"
-            >
-              2 - Experience
-              <span
-                className={`absolute -bottom-1 left-0 right-0 h-0.5 origin-left bg-sky-300 transform scale-x-0 transition-transform duration-250 ease-in-out ${
-                  pathname === "/" && selectedSection === "experience"
-                    ? "scale-x-100"
-                    : ""
-                }`}
-              ></span>
-            </LinkScroll>
-          </li>
-          <li
-            onClick={() => {
-              setSelectedSection("about");
-              if (pathname === "/projects") router.push("/");
-            }}
-            className={`cursor-pointer w-4/6 transition-all font-extralight ${
-              selectedSection === "about"
-                ? "text-2xl font-semibold text-white"
-                : "text-xl"
-            }`}
-            style={{ width: "110px" }}
-          >
-            <LinkScroll
-              to="about"
-              smooth={true}
-              duration={500}
-              onClick={() => {
-                if (pathname === "/projects") router.push("/");
-              }}
-              className="relative inline-block group"
-            >
-              3 - About
-              <span
-                className={`absolute -bottom-1 left-0 right-0 h-0.5 origin-left bg-sky-300 transform scale-x-0 transition-transform duration-250 ease-in-out ${
-                  pathname === "/" && selectedSection === "about"
-                    ? "scale-x-100"
-                    : ""
-                }`}
-              ></span>
-            </LinkScroll>
-          </li>
-          <li
-            onClick={() => {
-              setSelectedSection("contact");
-              if (pathname === "/projects") router.push("/");
-            }}
-            className={`cursor-pointer w-4/6 transition-all font-extralight ${
-              selectedSection === "contact"
-                ? "text-2xl font-semibold text-white"
-                : "text-xl"
-            }`}
-            style={{ width: "135px" }}
-          >
-            <LinkScroll
-              to="contact"
-              smooth={true}
-              duration={500}
-              onClick={() => {
-                if (pathname === "/projects") router.push("/");
-              }}
-              className="relative inline-block group"
-            >
-              4 - Contact
-              <span
-                className={`absolute -bottom-1 left-0 right-0 h-0.5 origin-left bg-sky-300 transform scale-x-0 transition-transform duration-250 ease-in-out ${
-                  pathname === "/" && selectedSection === "contact"
-                    ? "scale-x-100"
-                    : ""
-                }`}
-              ></span>
-            </LinkScroll>
-          </li>
-        </motion.ul>
-      </div>
-      <motion.div
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1 },
-        }}
-        initial="hidden"
-        animate="visible"
-        transition={{ duration: 1.5 }}
-        className="xl:mt-auto mt-7 mb-9 ml-1 flex gap-5"
-      >
-        <div className="flex flex-col items-left gap-2 justify-between p-2 px-4 bg-transparent rounded-md">
-          <ul className="flex justify-between gap-2 flex-row">
+
+          <div className="flex items-center gap-6 ml-2">
             <Link
-              className="text-sm hover:text-sky-300 flex items-center gap-1 mr-2 transition-colors"
+              className="text-white/30 hover:text-sky-300 transition-all duration-300 hover:scale-110"
               href="https://github.com/bartwo21"
               target="_blank"
             >
-              <FaGithub size={25} />
+              <FaGithub size={24} />
             </Link>
             <Link
-              className="text-sm hover:text-sky-300 flex items-center gap-1 mr-2 transition-colors"
+              className="text-white/30 hover:text-sky-300 transition-all duration-300 hover:scale-110"
               href="https://www.linkedin.com/in/bartwocakir/"
               target="_blank"
             >
-              <FaLinkedin size={25} />
+              <FaLinkedin size={24} />
             </Link>
             <Link
-              className="text-sm hover:text-sky-300 flex items-center gap-1 mr-2 transition-colors"
+              className="text-white/30 hover:text-sky-300 transition-all duration-300 hover:scale-110"
               href="https://www.instagram.com/bar.two/?hl=tr"
               target="_blank"
             >
-              <FaSquareInstagram size={25} />
+              <FaSquareInstagram size={24} />
             </Link>
             <Link
-              className="text-sm hover:text-sky-300 flex items-center gap-1 transition-colors"
+              className="text-white/30 hover:text-sky-300 transition-all duration-300 hover:scale-110"
               href="mailto:bartucakir21@gmail.com"
             >
               <IoIosMail size={24} />
             </Link>
-          </ul>
+          </div>
         </div>
-      </motion.div>
-      <motion.div
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1 },
-        }}
-        initial="hidden"
-        animate="visible"
-        transition={{ duration: 1.5 }}
-        className="fixed bottom-0 left-1/5 z-10 p-2 bg-slate-300 rounded-t-2xl bg-opacity-55 md:flex hidden"
-      >
-        <p className="text-xs text-gray-800 text-center text-opacity-85">
-          Made with ❤️ by Bartu Çakır
-        </p>
-      </motion.div>
+      </div>
     </div>
   );
 };

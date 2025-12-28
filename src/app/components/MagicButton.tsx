@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 type Props = {
   text: string;
@@ -27,31 +28,34 @@ export default function MagicButton({
   isActive = false,
 }: Props) {
   const buttonContent = (
-    <button
+    <motion.button
+      whileTap={{ scale: 0.98 }}
       type={type}
       onClick={onClick}
-      className={`group relative inline-flex h-10 overflow-hidden rounded-lg p-[1px] min-w-40 ${className || ''}`}
+      className={`group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full px-8 font-medium transition-all duration-500 ${
+        isActive 
+          ? 'bg-white/90 text-sky-900 shadow-[0_10px_20px_rgba(0,0,0,0.1)]' 
+          : 'bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:border-white/40'
+      } backdrop-blur-md ${className || ''}`}
       disabled={loading}
     >
-      <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#7dd3fc_50%,#E2CBFF_100%)]" />
-      <span className={`relative inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg px-3 py-1 text-xs font-medium backdrop-blur-3xl ${
-        isActive 
-          ? 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-[0_0_20px_rgba(59,130,246,0.5)]' 
-          : 'bg-slate-950 text-gray-400'
-      }`}>
+      {/* Soft Glow Effect */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-tr from-sky-400/10 to-transparent" />
+      
+      <div className="relative flex items-center gap-3">
         {loading ? (
-          <div className="w-6 h-6 border-t-2 border-r-2 border-b-0 border-l-0 border-gray-200 rounded-full animate-spin"></div>
+          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
         ) : (
           <>
-            <div className="flex items-center transition-transform duration-300 group-hover:scale-[1.01]">
-              {text}
-              {icon && <span className="ml-2 ">{icon}</span>}
-            </div>
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+            <span className="tracking-widest text-[11px] uppercase font-bold">{text}</span>
+            {icon && <span className="text-lg opacity-80 group-hover:opacity-100 transition-opacity">{icon}</span>}
           </>
         )}
-      </span>
-    </button>
+      </div>
+
+      {/* Subtle Shine */}
+      <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[25deg] group-hover:animate-[shine_1.5s_ease-in-out_infinite]" />
+    </motion.button>
   );
 
   if (type === "submit" || !href) {
@@ -59,7 +63,7 @@ export default function MagicButton({
   }
 
   return (
-    <Link href={href} download={download} target={target}>
+    <Link href={href} download={download} target={target} className="no-underline">
       {buttonContent}
     </Link>
   );

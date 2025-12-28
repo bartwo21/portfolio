@@ -10,33 +10,18 @@ import Tilt from "react-parallax-tilt";
 
 import { fetchAllGithubRepos, projectData } from "../lib/data";
 import MagicButton from "./MagicButton";
+import { useSectionInView } from "../hooks/useSectionInView";
 
 const Projectcards: React.FC = () => {
-  const { selectedSection, setSelectedSection, loading, setLoading } =
-    useContext(Context) as ContextType;
-  const [data, setData] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const isInWorkSection = scrollTop >= 0 && scrollTop <= 700;
-      if (isInWorkSection && selectedSection !== "work") {
-        setSelectedSection("work");
-      } else if (!isInWorkSection && selectedSection === "work") {
-        setSelectedSection("");
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [selectedSection]);
+  const { ref } = useSectionInView("work");
+  const { setLoading } = useContext(Context) as ContextType;
+  const [dataLoaded, setDataLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetchAllGithubRepos();
       if (response) {
-        setData(true);
+        setDataLoaded(true);
       }
       setTimeout(() => {
         localStorage.setItem("loaded", "true");
@@ -44,118 +29,104 @@ const Projectcards: React.FC = () => {
       }, 2500);
     };
     fetchData();
-  }, []);
+  }, [setLoading]);
 
   return (
-    <div id="work" className="cards flex flex-col w-full gap-6">
-      <motion.h1
-        initial={{ x: -20, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{
-          duration: 1,
-          type: "spring",
-          stiffness: 50,
-        }}
-        className="text-xl text-sky-50 text-center mb-4"
-      >
-        Pinned Repositories
-      </motion.h1>
-      {projectData?.map((data, index) => (
-        <Tilt
-          tiltEnable={false}
-          scale={1.02}
-          transitionSpeed={2500}
-          style={{
-            transformStyle: "preserve-3d",
-          }}
-          key={data.name}
+    <div id="work" ref={ref} className="cards flex flex-col w-full gap-10">
+      <div className="relative flex flex-col items-center mb-4">
+        <motion.h2
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          className="text-2xl font-light tracking-[0.2em] text-white uppercase"
         >
+          Selected <span className="font-serif italic text-sky-200">Works</span>
+        </motion.h2>
+        <div className="mt-4 w-12 h-[2px] bg-white/20" />
+      </div>
+
+      <div className="grid grid-cols-1 gap-8">
+        {projectData?.map((data, index) => (
           <motion.div
-            initial={{ x: -20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{
-              duration: 1,
-              delay: index / 2,
-              type: "spring",
-              stiffness: 50,
-            }}
             key={data.name}
-            className="card bg-transparent rounded-lg shadow-md border border-slate-800 border-opacity-65 flex justify-around items-center 2xl:w-full 2xl:flex-row flex-col 2xl:p-0 p-4"
-            style={{ boxShadow: "0 0px 20px 0 rgba(17, 72, 128, 0.164)" }}
+            initial={{ x: -20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            viewport={{ once: true }}
           >
-            <div className="left flex flex-col gap-2 2xl:w-6/12 w-full">
-              <h1 className="text-md font-bold">{data.name}</h1>
-              <p className="text-gray-500 font-bold w-full text-xs">
-                {data.description}
-              </p>
-              <h2 className="text-xs font-semibold flex gap-1 flex-wrap mt-1">
-                {data.topics?.map((topic) => (
-                  <span key={topic} className="mb-[6px]">
-                    <span className="bg-slate-800 rounded-sm p-1 text-slate-400">
-                      {topic}
-                    </span>{" "}
-                  </span>
-                ))}
-              </h2>
-            </div>
-            <div className="flex sm:flex-row flex-col-reverse gap-3 mt-1">
-              <div className="flex sm:flex-col flex-row sm:mt-0 mt-3 mb-0 justify-center items-center gap-8">
-                <Link
-                  href={data.html_url}
-                  className="flex items-center justify-center w-7 h-7 bg-sky-50 rounded-full shadow-md hover:bg-sky-200 transition-colors duration-300 ease-in-out"
-                  target="_blank"
-                >
-                  <FaGithub className="text-xl text-gray-900" />
-                </Link>
-                <Link
-                  href={data.live_url}
-                  className="flex items-center justify-center w-7 h-7 bg-sky-50 rounded-full shadow-md hover:bg-sky-200 transition-colors duration-300 ease-in-out"
-                  target="_blank"
-                >
-                  <VscRunAll className="text-xl text-gray-900" />
-                </Link>
+            <Tilt
+              tiltMaxAngleX={1}
+              tiltMaxAngleY={1}
+              scale={1}
+              className="group"
+            >
+              <div className="relative overflow-hidden rounded-3xl border border-white/5 bg-white/[0.03] backdrop-blur-xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-8 transition-all duration-500 hover:bg-white/[0.07] hover:border-white/20 shadow-xl">
+
+                <div className="flex-1 space-y-4 z-10 text-left w-full">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl font-medium text-white group-hover:text-sky-200 transition-colors">
+                      {data.name}
+                    </h3>
+                    <div className="flex gap-4">
+                      <Link
+                        href={data.html_url}
+                        target="_blank"
+                        className="text-white/30 hover:text-white transition-colors"
+                      >
+                        <FaGithub size={24} />
+                      </Link>
+                      <Link
+                        href={data.live_url}
+                        target="_blank"
+                        className="text-white/30 hover:text-sky-300 transition-colors"
+                      >
+                        <VscRunAll size={24} />
+                      </Link>
+                    </div>
+                  </div>
+
+                  <p className="text-sky-100/50 text-base font-light leading-relaxed">
+                    {data.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {data.topics?.map((topic) => (
+                      <span
+                        key={topic}
+                        className="px-3 py-1 text-[10px] tracking-wider font-bold bg-white/5 border border-white/10 rounded-lg text-white/60"
+                      >
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="relative w-full md:w-64 aspect-video overflow-hidden rounded-2xl border border-white/5 shadow-lg">
+                  <Link href={data.live_url} target="_blank">
+                    <Image
+                      src={data.img ?? ""}
+                      alt={data.name}
+                      fill
+                      className="object-cover transition-opacity duration-500 group-hover:opacity-90"
+                    />
+                  </Link>
+                </div>
               </div>
-              <Tilt
-                style={{
-                  transformStyle: "preserve-3d",
-                }}
-                className="img 2xl:w-52 lg:w-68 2xl:mt-3 2xl:mb-4 lg:mb-0 mt-4 px-1 hover:ml-10"
-                scale={1.25}
-              >
-                <Link href={data.live_url} target="_blank">
-                  <Image
-                    src={data.img ?? ""}
-                    alt="Project Image"
-                    width={300}
-                    height={300}
-                    className="rounded-lg mb-0 sm:my-1"
-                    style={{
-                      transform: "translateZ(50px)",
-                    }}
-                  />
-                </Link>
-              </Tilt>
-            </div>
+            </Tilt>
           </motion.div>
-        </Tilt>
-      ))}
+        ))}
+      </div>
+
       <motion.div
-        initial={{ x: -20, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{
-          duration: 1,
-          type: "spring",
-          stiffness: 50,
-        }}
-        className="flex w-full justify-end"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        className="flex w-full justify-center mt-6"
       >
         <MagicButton
-          text="See all"
-          href={
-            data ? "/projects" : "https://github.com/bartwo21?tab=repositories"
-          }
-          target={data ? "_self" : "_blank"}
-          icon={<GoArrowUpRight size={14} />}
+          text="View Full Portfolio"
+          href={dataLoaded ? "/projects" : "https://github.com/bartwo21?tab=repositories"}
+          target={dataLoaded ? "_self" : "_blank"}
+          icon={<GoArrowUpRight size={18} />}
+          className="px-12"
         />
       </motion.div>
     </div>

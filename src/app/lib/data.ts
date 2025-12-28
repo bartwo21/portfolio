@@ -1,3 +1,4 @@
+import React from "react";
 import {
   SiJavascript,
   SiTypescript,
@@ -72,7 +73,10 @@ export const experienceData = [
     dateWith: "May 2025 - Present",
     image: "/rmos_logo.jpeg",
     description: [
-      ["Next.js | React.js | Ag Grid", "Zod | TanStack Query | TailwindCSS", "Github Actions | Coolify | Docker", "Zustand | Mantine | Turborepo", "Feature-Based Architecture | Hotel Management Systems | ERP"]
+      "Modernizing legacy desktop hotel applications using Next.js; leading Front-Office and Channel Manager modules while keeping the tech stack up-to-date.",
+      "Architecting complex, data-heavy interfaces for PMS solutions using Ag Grid, Zustand, and TanStack Query to ensure seamless global state management and high-performance data handling.",
+      "Ensuring code scalability and maintainability by utilizing a Feature-Based Architecture within a Turborepo monorepo environment, while actively contributing to the established CI/CD workflows.",
+      ["Next.js", "React.js", "Ag Grid", "Zustand", "TanStack Query", "TailwindCSS", "Turborepo", "Feature-Based Architecture"]
     ]
   },
   {
@@ -224,7 +228,7 @@ export const journeyData: JourneyItem[] = [
   {
     year: "2025",
     title: "Frontend Developer at Rmos Yazılım",
-    description: ""
+    description: "Played a key role in modernizing legacy hotel management modules into high-performance Next.js applications, with a strong focus on scalable architecture."
   },
   {
     year: "2024",
