@@ -201,11 +201,11 @@ export const myAppsData: PinnedData[] = [
     name: "Resuup",
     description: "AI-powered CV transformer and builder SaaS.",
     topics: [
-      "Next.js 15",
-      "Supabase",
-      "OpenAI",
-      "Lemon Squeezy",
-      "Upstash Redis"
+      "next.js",
+      "supabase",
+      "openai",
+      "lemon-squeezy",
+      "upstash-redis"
     ],
     html_url: "",
     live_url: "https://resuup.com",

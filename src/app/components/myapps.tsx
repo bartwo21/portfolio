@@ -43,8 +43,8 @@ const MyApps: React.FC = () => {
               stiffness: 50,
             }}
             key={data.name}
-            className="card bg-transparent rounded-lg shadow-md border border-slate-800 border-opacity-65 flex justify-around items-center 2xl:w-full 2xl:flex-row flex-col 2xl:p-0 p-4"
-            style={{ boxShadow: "0 0px 20px 0 rgba(17, 72, 128, 0.164)" }}
+            className="card bg-slate-900/20 backdrop-blur-sm rounded-lg shadow-lg border border-sky-500/30 hover:border-sky-400/50 transition-all duration-300 flex justify-around items-center 2xl:w-full 2xl:flex-row flex-col 2xl:p-0 p-4"
+            style={{ boxShadow: "0 0px 35px 0 rgba(56, 189, 248, 0.2)" }}
           >
             <div className="left flex flex-col gap-2 2xl:w-6/12 w-full">
               <h1 className="text-md font-bold">{data.name}</h1>
