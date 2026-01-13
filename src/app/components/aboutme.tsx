@@ -119,7 +119,7 @@ const Aboutme = () => {
 				<div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
 					<div className="space-y-4 lg:text-left text-center">
 						<span className="text-sky-300/60 font-black tracking-[0.4em] uppercase text-xs">
-							Curriculum Vitae
+							Curriculum Vitae test deneme bu ne?
 						</span>
 						<h2 className="text-5xl md:text-7xl font-extralight tracking-tighter text-white">
 							About{" "}

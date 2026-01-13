@@ -1,21 +1,21 @@
-import React from "react";
+import type React from "react";
 import {
-  SiJavascript,
-  SiTypescript,
-  SiReact,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiRedux,
-  SiGit,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  SiSass,
-  SiJira,
-  SiShadcnui,
-  SiHtml5,
   SiCss3,
+  SiExpress,
+  SiGit,
+  SiHtml5,
+  SiJavascript,
+  SiJira,
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiReact,
+  SiRedux,
+  SiSass,
+  SiShadcnui,
+  SiTailwindcss,
   SiTrello,
+  SiTypescript,
 } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 import { VscAzureDevops } from "react-icons/vsc";
@@ -76,8 +76,17 @@ export const experienceData = [
       "Modernizing legacy desktop hotel applications using Next.js; leading Front-Office and Channel Manager modules while keeping the tech stack up-to-date.",
       "Architecting complex, data-heavy interfaces for PMS solutions using Ag Grid, Zustand, and TanStack Query to ensure seamless global state management and high-performance data handling.",
       "Ensuring code scalability and maintainability by utilizing a Feature-Based Architecture within a Turborepo monorepo environment, while actively contributing to the established CI/CD workflows.",
-      ["Next.js", "React.js", "Ag Grid", "Zustand", "TanStack Query", "TailwindCSS", "Turborepo", "Feature-Based Architecture"]
-    ]
+      [
+        "Next.js",
+        "React.js",
+        "Ag Grid",
+        "Zustand",
+        "TanStack Query",
+        "TailwindCSS",
+        "Turborepo",
+        "Feature-Based Architecture",
+      ],
+    ],
   },
   {
     title: "Frontend Developer",
@@ -204,16 +213,18 @@ export const myAppsData: PinnedData[] = [
   {
     name: "Resuup",
     description: "AI-powered CV transformer and builder SaaS.",
-    topics: [
-      "next.js",
-      "supabase",
-      "openai",
-      "lemon-squeezy",
-      "upstash-redis"
-    ],
+    topics: ["next.js", "supabase", "openai", "lemon-squeezy", "upstash-redis"],
     html_url: "",
     live_url: "https://resuup.com",
     img: "/resuup.png",
+  },
+  {
+    name: "Coder Buddy",
+    description: "Your chaotic Gen Z pair programmer.",
+    topics: ["vscode/cursor extension", "typescript", "react", "openai", "webview"],
+    html_url: "",
+    live_url: "https://open-vsx.org/extension/bartwo21/coder-buddy",
+    img: "/coder_buddy.svg",
   },
 ];
 
@@ -228,7 +239,8 @@ export const journeyData: JourneyItem[] = [
   {
     year: "2025",
     title: "Frontend Developer at Rmos Yazılım",
-    description: "Played a key role in modernizing legacy hotel management modules into high-performance Next.js applications, with a strong focus on scalable architecture."
+    description:
+      "Played a key role in modernizing legacy hotel management modules into high-performance Next.js applications, with a strong focus on scalable architecture.",
   },
   {
     year: "2024",

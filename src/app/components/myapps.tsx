@@ -101,7 +101,11 @@ const MyApps: React.FC = () => {
 										src={data.img ?? ""}
 										alt={data.name}
 										fill
-										className="object-cover"
+										className={
+											data.name === "Coder Buddy"
+												? "object-contain p-10"
+												: "object-cover"
+										}
 									/>
 									<div className="absolute inset-0 bg-sky-900/5 mix-blend-overlay" />
 								</Link>
