@@ -211,6 +211,14 @@ export const projectData: PinnedData[] = [
 
 export const myAppsData: PinnedData[] = [
   {
+    name: "Pet Garden: Cute Pals",
+    description: "Snap photos of animals to build a cozy digital pet collection.",
+    topics: ["expo", "react-native", "supabase", "ios", "app-group", "openai"],
+    html_url: "",
+    live_url: "https://apps.apple.com/tr/app/pet-garden-sanal-hayvan/id6759716582?l=tr",
+    img: "/pet.png",
+  },
+  {
     name: "Resuup",
     description: "AI-powered CV transformer and builder SaaS.",
     topics: ["next.js", "supabase", "openai", "lemon-squeezy", "upstash-redis"],
