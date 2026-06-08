@@ -30,7 +30,7 @@ const MyApps: React.FC = () => {
 					animate={{ y: 0, opacity: 1 }}
 					className="text-4xl 2xl:text-5xl font-extralight tracking-tight text-white mb-8"
 				>
-					My <span className="font-serif italic text-sky-200">Apps</span>
+					My <span className="font-serif italic text-sky-200">Works</span>
 				</motion.h1>
 				<div className="w-px h-12 bg-gradient-to-b from-sky-400/50 to-transparent" />
 			</div>
