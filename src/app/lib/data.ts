@@ -214,7 +214,7 @@ export const myAppsData: PinnedData[] = [
 		name: "Power Akademi",
 		description:
 			"Course-selling platform with lessons and open-ended question rooms — instant scoring with answer keys & explanations.",
-		topics: ["next.js", "typescript", "server actions", "tiptap"],
+		topics: ["next.js", "typescript", "server actions", "tiptap", "polar.sh"],
 		html_url: "",
 		live_url: "https://powerakademi.net",
 		img: "/powerakademi.png",
@@ -223,7 +223,7 @@ export const myAppsData: PinnedData[] = [
 		name: "Pet Garden: Cute Pals",
 		description:
 			"Snap photos of animals to build a cozy digital pet collection.",
-		topics: ["expo", "react-native", "supabase", "ios", "app-group", "openai"],
+		topics: ["expo", "react-native", "ios", "app-group", "image-generation"],
 		html_url: "",
 		live_url:
 			"https://apps.apple.com/tr/app/pet-garden-sanal-hayvan/id6759716582?l=tr",
